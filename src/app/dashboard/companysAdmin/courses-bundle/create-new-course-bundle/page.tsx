@@ -22,7 +22,7 @@ export default function CreateNewCourseBundle() {
         leftContent="null"
       />
 
-      <Card className="w-full bg-inherit border-none shadow-none py-[28px] mx-auto">
+      <Card className="w-full bg-inherit border-none shadow-none md:px-[24px] py-[28px] mx-auto">
         <div>
           <CardContent>
             <form className="grid gap-8">
@@ -48,29 +48,27 @@ export default function CreateNewCourseBundle() {
                     required
                   />
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {/* Bundle price */}
-                  <div className="grid gap-3">
-                    <Label htmlFor="phone">Bundle price</Label>
-                    <Input
-                      id="phone"
-                      type="number"
-                      placeholder="Enter bundle price"
-                      className="w-full h-[60px] px-5 py-4 bg-[#FFFFFF] text-[#2D2D2D] placeholder:text-[#999999] shadow-none border border-[#E6E6E6] rounded-[8px] input-field-text"
-                      required
-                    />
-                  </div>
-                  {/* Discount Percentage */}
-                  <div className="grid gap-3">
-                    <Label htmlFor="address">Discount Percentage</Label>
-                    <Input
-                      id="address"
-                      type="text"
-                      placeholder="Enter Discount Percentage"
-                      className="w-full h-[60px] px-5 py-4 bg-[#FFFFFF] text-[#2D2D2D] placeholder:text-[#999999] shadow-none border border-[#E6E6E6] rounded-[8px] input-field-text"
-                      required
-                    />
-                  </div>
+                {/* Bundle price */}
+                <div className="grid gap-3">
+                  <Label htmlFor="phone">Bundle price</Label>
+                  <Input
+                    id="phone"
+                    type="number"
+                    placeholder="Enter bundle price"
+                    className="w-full h-[60px] px-5 py-4 bg-[#FFFFFF] text-[#2D2D2D] placeholder:text-[#999999] shadow-none border border-[#E6E6E6] rounded-[8px] input-field-text"
+                    required
+                  />
+                </div>
+                {/* Discount Percentage */}
+                <div className="grid gap-3">
+                  <Label htmlFor="address">Discount Percentage</Label>
+                  <Input
+                    id="address"
+                    type="text"
+                    placeholder="Enter Discount Percentage"
+                    className="w-full h-[60px] px-5 py-4 bg-[#FFFFFF] text-[#2D2D2D] placeholder:text-[#999999] shadow-none border border-[#E6E6E6] rounded-[8px] input-field-text"
+                    required
+                  />
                 </div>
                 {/* Select Courses tor the Bundle */}
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">

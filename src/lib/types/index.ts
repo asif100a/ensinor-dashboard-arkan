@@ -65,7 +65,7 @@ export interface CertificateTypes {
   courseProgress?: number;
 }
 
-export type UserRole = "student" | "instructor" | "employee" | "businessInstructor" | "superAdmin";
+export type UserRole = "student" | "instructor" | "employee" | "businessInstructor" | "companysAdmin" | "superAdmin";
 
 export interface CourseTypes {
   _id: string;

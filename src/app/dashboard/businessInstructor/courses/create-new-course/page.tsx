@@ -1,10 +1,10 @@
 "use client";
 
-import MyCoursesTabs from "@/components/(businessInstructor)/myCourses/MyCoursesTabs";
+import MyCoursesTabs from "@/components/(bInstructor-cAdmin)/myCourses/MyCoursesTabs";
 import { Card } from "@/components/ui/card";
 import React, { useState } from "react";
-import CourseDetails from "@/components/(businessInstructor)/myCourses/tabContents/CourseDetails";
-import CourseMedia from "@/components/(businessInstructor)/myCourses/tabContents/CourseMedia";
+import CourseDetails from "@/components/(bInstructor-cAdmin)/myCourses/tabContents/CourseDetails";
+import CourseMedia from "@/components/(bInstructor-cAdmin)/myCourses/tabContents/CourseMedia";
 
 const tabs = [
   { name: "Course details", count: 3 },
@@ -21,7 +21,7 @@ export default function CreateNewCourse() {
       {/* Form */}
       <Card className="w-full border-none shadow-none bg-white p-0 py-6 md:p-6 md:py-12">
         {/* Course Details */}
-        {activeTab === tabs[0]?.name && <CourseDetails />}
+        {activeTab === tabs[0]?.name && <CourseDetails setActiveTab={setActiveTab} />}
         {activeTab === tabs[1]?.name && <CourseMedia />}
       </Card>
     </div>

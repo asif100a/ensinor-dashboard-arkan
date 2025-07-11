@@ -26,7 +26,7 @@ export default function CurrentColnstructorsTable() {
       {/* Section Header */}
       <div>
         <SectionHeader
-          title="Current Co-lnstructors"
+          title="Current Co-Instructors"
           description=""
           leftContent="null"
         />

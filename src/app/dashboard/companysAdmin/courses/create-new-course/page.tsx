@@ -1,10 +1,10 @@
 "use client";
 
-import MyCoursesTabs from "@/components/(instructor)/myCourses/MyCoursesTabs";
+import MyCoursesTabs from "@/components/(bInstructor-cAdmin)/myCourses/MyCoursesTabs";
 import { Card } from "@/components/ui/card";
 import React, { useState } from "react";
-import CourseDetails from "@/components/(instructor)/myCourses/tabContents/CourseDetails";
-import CourseMedia from "@/components/(instructor)/myCourses/tabContents/CourseMedia";
+import CourseDetails from "@/components/(bInstructor-cAdmin)/myCourses/tabContents/CourseDetails";
+import CourseMedia from "@/components/(bInstructor-cAdmin)/myCourses/tabContents/CourseMedia";
 
 const tabs = [
   { name: "Course details", count: 3 },

@@ -125,8 +125,8 @@ export default function CourseMedia() {
             </video>
           </div>
 
-          <button type="button" className="col-span-2 w-full bg-yellow-primary text-black-primary text-lg font-medium py-3 rounded hover:bg-yellow-500 cursor-pointer">
-            Next
+          <button type="button" className="col-span-2 w-full bg-yellow-primary text-black-primary text-lg font-medium py-3 rounded-md hover:bg-yellow-500 cursor-pointer">
+            Save
           </button>
         </form>
       </CardContent>

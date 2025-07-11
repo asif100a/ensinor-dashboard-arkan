@@ -34,7 +34,7 @@ export default function Course() {
           options={{
             name: "link",
             content: "Create a New Course",
-            link: "/dashboard/businessInstructor/courses/create-new-course",
+            link: "/dashboard/companysAdmin/courses/create-new-course",
             type: "fill",
           }}
         />

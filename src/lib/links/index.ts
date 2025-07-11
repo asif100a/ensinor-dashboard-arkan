@@ -147,3 +147,52 @@ export const businessInstructorLinks: SidebarLink[] = [
     icon: "/icons/settings.svg",
   },
 ];
+
+export const companysAdminLinks: SidebarLink[] = [
+  { name: "Dashboard", url: "/dashboard", icon: "/icons/dashboard.svg" },
+  {
+    name: "My Courses",
+    url: "/dashboard/companysAdmin/courses",
+    icon: "/icons/book.svg",
+  },
+  {
+    name: "Courses-Bundle",
+    url: "/dashboard/companysAdmin/courses-bundle",
+    icon: "/icons/bundle.svg",
+  },
+  {
+    name: "Co-Instructors",
+    url: "/dashboard/companysAdmin/co-instructors",
+    icon: "/icons/user.svg",
+  },
+  {
+    name: "Events & Webinars",
+    url: "/dashboard/companysAdmin/events-and-webinars",
+    icon: "/icons/event.svg",
+  },
+  {
+    name: "Students",
+    url: "/dashboard/companysAdmin/students",
+    icon: "/icons/student.svg",
+  },
+  {
+    name: "Instructors",
+    url: "/dashboard/companysAdmin/instructors",
+    icon: "/icons/user.svg",
+  },
+  {
+    name: "Invitations",
+    url: "/dashboard/companysAdmin/invitations",
+    icon: "/icons/open-mail.svg",
+  },
+  {
+    name: "Reviews",
+    url: "/dashboard/companysAdmin/reviews",
+    icon: "/icons/review.svg",
+  },
+  {
+    name: "Settings",
+    url: "/dashboard/companysAdmin/settings",
+    icon: "/icons/settings.svg",
+  },
+];

@@ -63,7 +63,7 @@ export default function InstructorsTable({
                   {/* Specialization */}
                   <td className="px-6 py-4">
                     <div>
-                      <p>{instructor.email}</p>
+                      <p className="text-nowrap">{instructor.specialization}</p>
                     </div>
                   </td>
                   {/* Courses */}

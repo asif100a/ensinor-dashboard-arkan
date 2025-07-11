@@ -53,7 +53,7 @@ export default function EventsAndWebinars() {
         options={{
           name: "link",
           content: "Schedule Event",
-          link: "/dashboard/businessInstructor/events-and-webinars/create-event-schedule",
+          link: "/dashboard/companysAdmin/events-and-webinars/create-event-schedule",
           type: "fill",
         }}
       />

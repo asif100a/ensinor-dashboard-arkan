@@ -4,6 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import TopBar from "@/components/TopBar";
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);

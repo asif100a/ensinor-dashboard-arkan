@@ -8,6 +8,7 @@ import { InstructorTypes } from "@/lib/types";
 import InstructorTabs from "@/components/(bInstructor-cAdmin)/instructors/InstructorTabs";
 import { SimpleSearchForm } from "@/components/custom-ui/buttons/buttons";
 import Image from "next/image";
+import AddInstructorPopup from "@/components/custom-ui/popups/AddInstructorPopup";
 
 const tabs: string[] = [
   "All Instructors",
@@ -119,8 +120,9 @@ const allInstructor: InstructorTypes[] = [
 ];
 
 export default function Instructors() {
-
   const [activeTab, setActiveTab] = useState<string>(tabs[0]);
+  const [isAddInstructorOpen, setIsAddInstructorOpen] =
+    useState<boolean>(false);
 
   const handleSearch = () => {
     console.log("Form searched");
@@ -136,6 +138,7 @@ export default function Instructors() {
           leftContent="null"
         />
         <button
+          onClick={() => setIsAddInstructorOpen(true)}
           className={`w-fit text-left px-6 py-3.5 bg-yellow-primary flex items-center gap-2 text-black-primary font-semibold text-nowrap rounded-lg cursor-pointer`}
         >
           <FiPlus className="text-xl" />
@@ -176,8 +179,8 @@ export default function Instructors() {
         {/* Section Header */}
         <div>
           <SectionHeader
-            title="Current Co-Instructors"
-            description=""
+            title="All Instructor"
+            description="Showing 8 out of 12 instructor"
             leftContent="null"
           />
         </div>
@@ -203,6 +206,9 @@ export default function Instructors() {
           </button>
         </div>
       </div>
+
+      {/* Add Instructor::Popup */}
+      {isAddInstructorOpen && <AddInstructorPopup setIsOpenPopup={setIsAddInstructorOpen} />}
     </div>
   );
 }

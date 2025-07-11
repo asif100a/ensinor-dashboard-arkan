@@ -88,17 +88,19 @@ export interface InstructorQuizTypes {
 }
 
 export interface StudentTypes {
-  _id: string;
-  studentName: string;
+  _id?: string;
+  studentName?: string;
+  name?: string;
   email?: string;
-  image: string;
-  address: string;
+  image?: string;
+  address?: string;
   department?: string;
-  progress: number;
-  enrolledCourses: number;
+  progress?: number;
+  enrolledCourses?: number;
+  completed?: number;
   courseName?: string;
   active?: string;
-  enrolledDate: string;
+  enrolledDate?: string;
 }
 
 export interface WithdrawTypes {

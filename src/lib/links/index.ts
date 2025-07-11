@@ -196,3 +196,57 @@ export const companysAdminLinks: SidebarLink[] = [
     icon: "/icons/settings.svg",
   },
 ];
+
+export const superAdminLinks: SidebarLink[] = [
+  { name: "Dashboard", url: "/dashboard", icon: "/icons/dashboard.svg" },
+  {
+    name: "Analytics",
+    url: "/dashboard/superAdmin/analytics",
+    icon: "/icons/analytics.svg",
+  },
+  {
+    name: "Reports",
+    url: "/dashboard/superAdmin/reports",
+    icon: "/icons/reports.svg",
+  },
+  {
+    name: "Courses",
+    url: "/dashboard/superAdmin/courses",
+    icon: "/icons/book.svg",
+  },
+  {
+    name: "Events",
+    url: "/dashboard/superAdmin/events",
+    icon: "/icons/event.svg",
+  },
+  {
+    name: "Shop",
+    url: "/dashboard/superAdmin/shop",
+    icon: "/icons/shop.svg",
+  },
+  {
+    name: "Instructors",
+    url: "/dashboard/superAdmin/instructors",
+    icon: "/icons/user.svg",
+  },
+  {
+    name: "Students",
+    url: "/dashboard/superAdmin/students",
+    icon: "/icons/student.svg",
+  },
+  {
+    name: "Business",
+    url: "/dashboard/superAdmin/business",
+    icon: "/icons/business.svg",
+  },
+  {
+    name: "Certificate Builder",
+    url: "/dashboard/superAdmin/certificate-builder",
+    icon: "/icons/make-certificate.svg",
+  },
+  {
+    name: "Settings",
+    url: "/dashboard/superAdmin/settings",
+    icon: "/icons/settings.svg",
+  },
+];

@@ -5,9 +5,10 @@ import StudentDashboard from "@/components/(student)/StudentDashboard";
 import { UserRole } from "@/lib/types";
 import React from "react";
 import CompanysAdminDashboard from "@/components/(bInstructor-cAdmin)/CompanysAdminDashboard";
+import SuperAdminDashboard from "@/components/(superAdmin)/SuperAdminDashboard";
 
 export default function Dashboard() {
-  const userRole: UserRole = 'companysAdmin'; // This should be dynamically set based on the logged-in user
+  const userRole: UserRole = 'superAdmin'; // This should be dynamically set based on the logged-in user
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -17,6 +18,7 @@ export default function Dashboard() {
       {userRole === ('employee' as UserRole) && <EmployeeDashboard />}
       {userRole === ('businessInstructor' as UserRole) && <BusinessInstructorDashboard />}
       {userRole === ('companysAdmin' as UserRole) && <CompanysAdminDashboard />}
+      {userRole === ('superAdmin' as UserRole) && <SuperAdminDashboard />}
     </div>
   );
 }

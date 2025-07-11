@@ -4,12 +4,23 @@ import GroupInvitationForm from "@/components/(bInstructor-cAdmin)/invitations/G
 import IndividualInvitationForm from "@/components/(bInstructor-cAdmin)/invitations/IndividualInvitationForm";
 import InvitationTabs from "@/components/(bInstructor-cAdmin)/invitations/InvitationTabs";
 import SectionHeader from "@/components/SectionHeader";
-import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const tabs: string[] = ["Individual Invite", "Group invite"];
 
 export default function Invitations() {
+  const searchPrams = useSearchParams();
   const [activeTab, setActiveTab] = useState<string>(tabs[0]);
+
+  useEffect(() => {
+    const invite = searchPrams.get("invite");
+    if (invite === "group") {
+      setActiveTab(tabs[1]);
+    } else {
+      setActiveTab(tabs[0]);
+    }
+  }, [searchPrams]);
 
   return (
     <div className="p-6 space-y-6">

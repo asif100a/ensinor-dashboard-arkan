@@ -1,3 +1,7 @@
+export type UserRole = "student" | "instructor" | "employee" | "businessInstructor" | "companysAdmin" | "superAdmin";
+
+export type InviteType = "individual" | "group";
+
 export interface CourseDataTypes {
   title: string;
   category: string;
@@ -64,8 +68,6 @@ export interface CertificateTypes {
   date: string;
   courseProgress?: number;
 }
-
-export type UserRole = "student" | "instructor" | "employee" | "businessInstructor" | "companysAdmin" | "superAdmin";
 
 export interface CourseTypes {
   _id: string;

@@ -162,3 +162,15 @@ export interface EventScheduleTypes {
   date: string;
   thumbnail: string;
 }
+
+export interface InstructorTypes {
+  instructorName: string;
+  email: string;
+  image: string;
+  specialization: string;
+  courses: number;
+  students: number;
+  rating: number;
+  earning: number;
+  status: string;
+}

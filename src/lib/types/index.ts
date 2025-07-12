@@ -73,10 +73,14 @@ export interface CourseTypes {
   _id: string;
   courseName: string;
   courseThumnail: string;
+  instructor?: string;
+  category?: string;
   lectures: number;
   duration: string;
   enrolled: number;
   status: string;
+  completedPercentage?: number;
+  rating?: number;
   amount: number;
 }
 
@@ -118,6 +122,11 @@ export interface ShopTypes {
   description: string;
   productManager: string;
   price: number;
+  status?: string;
+  author?: string;
+  category?: string;
+  sales?: number;
+  rating?: number;
 }
 
 export interface SidebarLink {
@@ -176,5 +185,16 @@ export interface InstructorTypes {
   students: number;
   rating: number;
   earning: number;
+  status: string;
+}
+
+export interface EventTypes {
+  eventName: string;
+  type: string;
+  date: string;
+  address: string;
+  organizer: string;
+  attendance: number;
+  price: number;
   status: string;
 }

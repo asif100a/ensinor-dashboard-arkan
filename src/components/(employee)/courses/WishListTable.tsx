@@ -89,7 +89,7 @@ export default function WishListTable() {
                     {/* Course type */}
                     <td className="px-6 py-4">
                       <div>
-                        <p>{wishListData.courseType}</p>
+                        <p className={`px-3 py-1 w-fit rounded-sm bg-[#FFFAE6] text-[#CCB247]`}>{wishListData.courseType}</p>
                       </div>
                     </td>
                     {/* Price */}

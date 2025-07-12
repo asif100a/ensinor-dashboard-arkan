@@ -5,7 +5,7 @@ export default function getFormatPrice(price: number): string {
     const priceLength = strPrice.length;
     const displayDigit = priceLength - 3;
     if(displayDigit > 0) {
-        return `${strPrice?.slice(0, displayDigit)}, ${strPrice?.slice(displayDigit)}`;
+        return `${strPrice?.slice(0, displayDigit)},${strPrice?.slice(displayDigit)}`;
     }else {
         return strPrice;
     }

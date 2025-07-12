@@ -4,7 +4,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 
-const EarningOverview = () => {
+const RevenueBreakdownChart = () => {
   const series = [
     {
       name: "Courses Sales",
@@ -71,11 +71,11 @@ const EarningOverview = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow p-6">
+    <div className="w-full bg-white rounded-lg shadow p-6">
       <h2 className="text-2xl font-semibold mb-6">Earning Overview</h2>
       <Chart options={options} series={series} type="area" height={350} />
     </div>
   );
 };
 
-export default EarningOverview;
+export default RevenueBreakdownChart;

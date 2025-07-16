@@ -9,9 +9,10 @@ import { FiPlus } from "react-icons/fi";
 import Tabs from "@/components/Tabs";
 import { EventTypes } from "@/lib/types";
 import EventsTable from "@/components/(superAdmin)/events/EventsTable";
-import EditAndExportButtons from "@/components/EditAndExportButtons";
+import EditAndExportButtons from "@/components/PrintAndExportButtons";
+import CreateEventPopup from "@/components/custom-ui/popups/CreateEventPopup";
 
-const courseTabs: string[] = ["All Events", "Upcoming", "Completed"];
+const tabs: string[] = ["All Events", "Upcoming", "Completed"];
 
 const events: EventTypes[] = [
   {
@@ -118,7 +119,7 @@ const events: EventTypes[] = [
 
 export default function Events() {
   const [isAddEventsOpen, setIsAddEventsOpen] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<string>(courseTabs[0]);
+  const [activeTab, setActiveTab] = useState<string>(tabs[0]);
   const [upcomingEvents, setUpcomingEvents] = useState<EventTypes[]>([]);
   const [completedEvents, setCompletedEvents] = useState<EventTypes[]>([]);
 
@@ -160,7 +161,7 @@ export default function Events() {
         {/* Tabs */}
         <div className="w-full">
           <Tabs
-            tabs={courseTabs}
+            tabs={tabs}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
@@ -186,18 +187,21 @@ export default function Events() {
       </div>
 
       {/* Events Tables */}
-      {activeTab === courseTabs[0] && (
-        <EventsTable events={events} />
+      {activeTab === tabs[0] && (
+        <EventsTable events={events} activeTab={activeTab} />
       )}
-      {activeTab === courseTabs[1] && (
-        <EventsTable events={upcomingEvents} />
+      {activeTab === tabs[1] && (
+        <EventsTable events={upcomingEvents} activeTab={activeTab} />
       )}
-      {activeTab === courseTabs[2] && (
-        <EventsTable events={completedEvents} />
+      {activeTab === tabs[2] && (
+        <EventsTable events={completedEvents} activeTab={activeTab} />
       )}
 
       {/* Edit & Export::Button */}
       <EditAndExportButtons />
+
+      {/* Create Event Popup */}
+      {isAddEventsOpen && <CreateEventPopup setIsOpenPopup={setIsAddEventsOpen} />}
     </div>
   );
 }

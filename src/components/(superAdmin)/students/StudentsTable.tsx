@@ -33,7 +33,9 @@ export default function StudentsTable({
     <div className="inline-block min-w-full align-middle p-6 bg-white rounded-xl space-y-6">
       {/* Table Header */}
       <SectionHeader
-        title="All student"
+       title={
+          activeTab.includes("All") ? "All Students" : `${activeTab} Students`
+        }
         description="Manage students and their courses on your platform"
         leftContent="null"
       />

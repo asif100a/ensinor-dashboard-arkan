@@ -10,6 +10,7 @@ import { InstructorTypes, ShopTypes } from "@/lib/types";
 import InstructorsTable from "@/components/(superAdmin)/Instructors/InstructorsTable";
 import InstructorCard from "@/components/custom-ui/cards/instructors/InstructorCard";
 import ReviewInstructorList from "@/components/(superAdmin)/Instructors/ReviewInstructorList";
+import AddInstructorPopup from "@/components/custom-ui/popups/AddInstructorPopup";
 
 const tabs: string[] = ["All Instructors", "Active", "Inactive", "Under Review"];
 
@@ -160,7 +161,7 @@ export default function Instructors() {
           className={`w-fit text-left px-6 py-3.5 bg-yellow-primary flex items-center gap-2 text-black-primary font-semibold text-nowrap rounded-lg cursor-pointer`}
         >
           <FiPlus className="text-xl" />
-          <span>Add Shop</span>
+          <span>Add Instructor</span>
         </button>
       </div>
 
@@ -198,6 +199,9 @@ export default function Instructors() {
       {activeTab === tabs[1] && <InstructorsTable instructors={activeInstructors} activeTab={activeTab} />}
       {activeTab === tabs[2] && <InstructorsTable instructors={inactiveInstructors} activeTab={activeTab} />}
       {activeTab === tabs[3] && <ReviewInstructorList />}
+
+      {/* Add Instructor Popup */}
+      {isAddInstructorsOpen && <AddInstructorPopup setIsOpenPopup={setIsAddInstructorsOpen} />}
     </div>
   );
 }

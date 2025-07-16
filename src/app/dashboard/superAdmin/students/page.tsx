@@ -9,6 +9,7 @@ import { FiPlus } from "react-icons/fi";
 import ReviewInstructorList from "@/components/(superAdmin)/Instructors/ReviewInstructorList";
 import StudentsTable from "@/components/(superAdmin)/students/StudentsTable";
 import { StudentTypes } from "@/lib/types";
+import PrintAndExportButtons from "@/components/PrintAndExportButtons";
 
 const tabs: string[] = ["All Students", "Active", "Inactive", "Under Review"];
 
@@ -190,6 +191,9 @@ export default function Students() {
       {activeTab === tabs[1] && <StudentsTable students={activeStudents} activeTab={activeTab} />}
       {activeTab === tabs[2] && <StudentsTable students={inactiveStudents} activeTab={activeTab} />}
       {activeTab === tabs[3] && <StudentsTable students={reviewStudents} activeTab={activeTab} />}
+
+      {/* Print & Export::Buttons */}
+      <PrintAndExportButtons />
     </div>
   );
 }

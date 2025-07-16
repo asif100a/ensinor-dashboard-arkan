@@ -6,6 +6,7 @@ import { EventTypes } from "@/lib/types";
 
 interface EventsTableProps {
   events: EventTypes[];
+  activeTab: string;
 }
 
 const tHeads: string[] = [
@@ -20,12 +21,14 @@ const tHeads: string[] = [
   "Action",
 ];
 
-export default function EventsTable({ events }: EventsTableProps) {
+export default function EventsTable({ events, activeTab }: EventsTableProps) {
   return (
     <div className="inline-block min-w-full align-middle p-6 bg-white rounded-xl space-y-6">
       {/* Table Header */}
       <SectionHeader
-        title="All events"
+       title={
+          activeTab?.includes("All") ? "All Events" : `${activeTab} Events`
+        }
         description="Manage and monitor all events on your platform"
         leftContent="null"
       />

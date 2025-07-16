@@ -8,7 +8,7 @@ export default function ReviewInstructorList() {
       {/* Table Header */}
       <div className="p-6">
         <SectionHeader
-          title="All Instructor"
+          title="Under Review Instructors"
           description="Manage instructors and their courses on your platform"
           leftContent="null"
         />

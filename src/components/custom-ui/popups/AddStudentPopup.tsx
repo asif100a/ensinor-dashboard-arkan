@@ -14,7 +14,7 @@ import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import StarRating from "../inputs/StarRating";
 
-interface AddDegreePopupProps {
+interface AddStudentPopupProps {
   setIsOpenPopup: React.Dispatch<React.SetStateAction<boolean>>;
   //   selectedDate: Date;
   //   setSelectedDate: React.Dispatch<React.SetStateAction<Date>>;
@@ -32,9 +32,9 @@ interface SpeakerTypes {
   speakTime: string;
 }
 
-export default function AddInstructorPopup({
+export default function AddStudentPopup({
   setIsOpenPopup,
-}: AddDegreePopupProps) {
+}: AddStudentPopupProps) {
   const [loading, setLoading] = useState(false);
   const [rating, setRating] = useState(0);
 

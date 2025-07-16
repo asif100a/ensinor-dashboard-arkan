@@ -30,7 +30,9 @@ export default function CoursesTable({
     <div className="inline-block min-w-full align-middle p-6 bg-white rounded-xl space-y-6">
       {/* Table Header */}
       <SectionHeader
-        title="All Courses"
+        title={
+          activeTab?.includes("All") ? "All Courses" : `${activeTab} Courses`
+        }
         description="Manage and monitor all courses on your platform"
         leftContent="null"
       />

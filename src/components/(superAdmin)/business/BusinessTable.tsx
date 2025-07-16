@@ -2,38 +2,40 @@ import React from "react";
 import SectionHeader from "@/components/SectionHeader";
 import { RiInformationLine } from "react-icons/ri";
 import Image from "next/image";
-import { InstructorTypes } from "@/lib/types";
+import { BusinessTypes } from "@/lib/types";
 import getCapitalizedWord from "../../../../utils/getCapitalizedWord";
+import { TfiLocationPin } from "react-icons/tfi";
+import { IoCheckmarkSharp } from "react-icons/io5";
+import { RxCross2 } from "react-icons/rx";
 import getFormatPrice from "../../../../utils/getFormatPrice";
 
-interface InstructorsTableProps {
-  instructors: InstructorTypes[];
+interface BusinessTableProps {
+  businesses: BusinessTypes[];
   activeTab: string;
 }
 
 const tHeads: string[] = [
-  "Name",
-  "Specialization",
-  "Courses",
-  "Students",
-  "Rating",
-  "Earning",
+  "Business",
+  "Plan",
+  "Employees",
+  "Active-Courses",
+  "Total Spent",
   "Status",
   "Action",
 ];
 
-export default function InstructorsTable({
-  instructors,
+export default function BusinessTable({
+  businesses,
   activeTab,
-}: InstructorsTableProps) {
+}: BusinessTableProps) {
   return (
     <div className="inline-block min-w-full align-middle p-6 bg-white rounded-xl space-y-6">
       {/* Table Header */}
       <SectionHeader
         title={
-          activeTab.includes("All") ? "All Instructors" : `${activeTab} Instructors`
+          activeTab.includes("All") ? "All Business" : `${activeTab} Business`
         }
-        description="Manage instructors and their courses on your platform"
+        description="Manage businesses and their courses on your platform"
         leftContent="null"
       />
 
@@ -55,56 +57,51 @@ export default function InstructorsTable({
           </thead>
           {/* T Body */}
           <tbody className="">
-            {instructors.map((instructor: InstructorTypes) => (
-              <tr key={instructor.email} className="border-b border-[#606060]">
+            {businesses.map((business: BusinessTypes) => (
+              <tr key={business.email} className="border-b border-[#606060]">
                 {/* Name */}
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-2">
                     <Image
-                      src={instructor.image}
-                      alt={instructor.instructorName}
+                      src={business.image || "/images/dashboard/business.png"}
+                      alt={business.businessName || "business Name"}
                       width={40}
                       height={40}
                       className="w-10 h-10 "
                     />
+                    {/* Email */}
                     <div>
                       <p className="font-semibold leading-6">
-                        {instructor.instructorName}
+                        {business.businessName}
                       </p>
-                      <p className="leading-5">
-                        <small>{instructor.email}</small>
+                      <p className="leading-6">
+                        <small>{business.email}</small>
                       </p>
                     </div>
                   </div>
                 </td>
-                {/* Specialization */}
+                {/* Plan */}
                 <td className="px-6 py-4">
                   <div>
-                    <p className="text-nowrap">{instructor.specialization}</p>
+                    <p className="text-nowrap">{business.plan}</p>
                   </div>
                 </td>
-                {/* Courses */}
+                {/* Employees */}
                 <td className="px-6 py-4">
                   <div>
-                    <p>{instructor.courses}</p>
+                    <p>{business.employees} Person</p>
                   </div>
                 </td>
-                {/* Students */}
+                {/* Active-Courses */}
                 <td className="px-6 py-4">
                   <div>
-                    <p>{getFormatPrice(instructor.students)}</p>
+                    <p>{business.activeCourses}</p>
                   </div>
                 </td>
-                {/* Rating */}
+                {/* Total Spent */}
                 <td className="px-6 py-4">
                   <div>
-                    <p>{instructor.rating}</p>
-                  </div>
-                </td>
-                {/* Earning */}
-                <td className="px-6 py-4">
-                  <div>
-                    <p>${getFormatPrice(instructor.earning)}</p>
+                    <p>${getFormatPrice(business.totalSpent)}</p>
                   </div>
                 </td>
                 {/* Status */}
@@ -112,22 +109,33 @@ export default function InstructorsTable({
                   <div>
                     <span
                       className={`px-2 py-1 ${
-                        instructor.status === "Active"
+                        business.status === "active"
                           ? "text-[#4BB54B] bg-[#4BB54B1A]"
-                          : instructor.status === "Pending"
+                          : business.status === "review"
                           ? "text-[#FD7E14] bg-[#FFF2E6]"
                           : "text-[#D70000] bg-[#FF53536B]"
                       } text-sm rounded-sm`}
                     >
-                      {getCapitalizedWord(instructor.status)}
+                      {getCapitalizedWord(business.status || "")}
                     </span>
                   </div>
                 </td>
                 {/* Action */}
                 <td className="px-6 py-4">
-                  <button className="cursor-pointer">
-                    <RiInformationLine className="text-[26px]" />
-                  </button>
+                  {activeTab === "Under Review" ? (
+                    <div className="flex items-center gap-2">
+                      <button className="cursor-pointer  text-[#4BB54B] border border-[#4BB54B] p-1 rounded-full">
+                        <IoCheckmarkSharp className="text-2xl" />
+                      </button>
+                      <button className="cursor-pointer  text-[#D70000] border border-[#D70000] p-1 rounded-full">
+                        <RxCross2 className="text-[26px]" />
+                      </button>
+                    </div>
+                  ) : (
+                    <button className="cursor-pointer">
+                      <RiInformationLine className="text-[26px]" />
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}

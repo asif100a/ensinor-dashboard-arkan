@@ -1,7 +1,7 @@
 import React from "react";
 import { FiDownload } from "react-icons/fi";
 
-export default function EditAndExportButtons() {
+export default function PrintAndExportButtons() {
   return (
     <div className="flex justify-end items-center gap-6">
       {/* PDF */}

@@ -8,6 +8,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import { CourseTypes } from "@/lib/types";
+import AddCoursePopup from "@/components/custom-ui/popups/AddCoursePopup";
 
 export type NewCourseTypes = Pick<
   CourseTypes,
@@ -149,7 +150,7 @@ export default function Courses() {
           className={`w-fit text-left px-6 py-3.5 bg-yellow-primary flex items-center gap-2 text-black-primary font-semibold text-nowrap rounded-lg cursor-pointer`}
         >
           <FiPlus className="text-xl" />
-          <span>Add Courses</span>
+          <span>Add Course</span>
         </button>
       </div>
 
@@ -188,6 +189,9 @@ export default function Courses() {
       {activeTab === courseTabs[1] && <CoursesTable courses={publishedCourses} activeTab={activeTab} />}
       {/* Courses Tables */}
       {activeTab === courseTabs[2] && <CoursesTable courses={reviewCourses} activeTab={activeTab} />}
+
+      {/* Add Course Popup */}
+      {isAddCoursesOpen && <AddCoursePopup setIsOpenPopup={setIsAddCoursesOpen} />}
     </div>
   );
 }

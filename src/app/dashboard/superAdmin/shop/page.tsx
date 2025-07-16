@@ -8,8 +8,12 @@ import React, { useEffect, useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import { ShopTypes } from "@/lib/types";
 import ShopsTable from "@/components/(superAdmin)/shops/ShopsTable";
+import AddShopPopup from "@/components/custom-ui/popups/AddShopPopup";
 
-export type NewShopTypes = Pick<ShopTypes, "title" | "author" | "category" | "price" | "sales" | "rating" | "status">;
+export type NewShopTypes = Pick<
+  ShopTypes,
+  "title" | "author" | "category" | "price" | "sales" | "rating" | "status"
+>;
 
 const tabs: string[] = ["All Books", "Published", "Under Review"];
 
@@ -24,7 +28,7 @@ const shops: NewShopTypes[] = [
     status: "Published",
   },
   {
-   title: "UX/UI Design Fundamentals",
+    title: "UX/UI Design Fundamentals",
     author: "Shahid Hasan",
     category: "Design",
     price: 321,
@@ -42,7 +46,7 @@ const shops: NewShopTypes[] = [
     status: "Published",
   },
   {
-   title: "UX/UI Design Fundamentals",
+    title: "UX/UI Design Fundamentals",
     author: "Shahid Hasan",
     category: "Design",
     price: 321,
@@ -60,7 +64,7 @@ const shops: NewShopTypes[] = [
     status: "Published",
   },
   {
-   title: "UX/UI Design Fundamentals",
+    title: "UX/UI Design Fundamentals",
     author: "Shahid Hasan",
     category: "Design",
     price: 321,
@@ -78,7 +82,7 @@ const shops: NewShopTypes[] = [
     status: "Published",
   },
   {
-   title: "UX/UI Design Fundamentals",
+    title: "UX/UI Design Fundamentals",
     author: "Shahid Hasan",
     category: "Design",
     price: 321,
@@ -96,7 +100,7 @@ const shops: NewShopTypes[] = [
     status: "Published",
   },
   {
-   title: "UX/UI Design Fundamentals",
+    title: "UX/UI Design Fundamentals",
     author: "Shahid Hasan",
     category: "Design",
     price: 321,
@@ -113,11 +117,13 @@ export default function Shop() {
   const [reviewShops, setReviewShops] = useState<NewShopTypes[]>([]);
 
   useEffect(() => {
-    if(shops.length > 0) {
-      const filteredPublished = shops?.filter(sh => sh.status === 'Published');
+    if (shops.length > 0) {
+      const filteredPublished = shops?.filter(
+        (sh) => sh.status === "Published"
+      );
       setPublishedShops(filteredPublished);
 
-      const filteredReview = shops?.filter(sh => sh.status === 'Review');
+      const filteredReview = shops?.filter((sh) => sh.status === "Review");
       setReviewShops(filteredReview);
     }
   }, [shops]);
@@ -174,11 +180,20 @@ export default function Shop() {
       </div>
 
       {/* Shops Tables */}
-      {activeTab === tabs[0] && <ShopsTable shops={shops} activeTab={activeTab} />}
+      {activeTab === tabs[0] && (
+        <ShopsTable shops={shops} activeTab={activeTab} />
+      )}
       {/* Shops Tables */}
-      {activeTab === tabs[1] && <ShopsTable shops={publishedShops} activeTab={activeTab} />}
+      {activeTab === tabs[1] && (
+        <ShopsTable shops={publishedShops} activeTab={activeTab} />
+      )}
       {/* Shops Tables */}
-      {activeTab === tabs[2] && <ShopsTable shops={reviewShops} activeTab={activeTab} />}
+      {activeTab === tabs[2] && (
+        <ShopsTable shops={reviewShops} activeTab={activeTab} />
+      )}
+
+      {/* Add Shop Popup */}
+      {isAddShopsOpen && <AddShopPopup setIsOpenPopup={setIsAddShopsOpen} />}
     </div>
   );
 }

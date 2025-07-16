@@ -6,7 +6,7 @@ import EventsReportTable from "@/components/(superAdmin)/reports/EventsReportTab
 import ReportTabs from "@/components/(superAdmin)/reports/ReportTabs";
 import RevenueReportTable from "@/components/(superAdmin)/reports/RevenueReportTable";
 import StudentReportTable from "@/components/(superAdmin)/reports/StudentReportTable";
-import EditAndExportButtons from "@/components/EditAndExportButtons";
+import EditAndExportButtons from "@/components/PrintAndExportButtons";
 import SectionHeader from "@/components/SectionHeader";
 import React, { useState } from "react";
 

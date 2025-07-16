@@ -30,7 +30,9 @@ export default function ShopsTable({
     <div className="inline-block min-w-full align-middle p-6 bg-white rounded-xl space-y-6">
       {/* Table Header */}
       <SectionHeader
-        title="All Books"
+      title={
+          activeTab.includes("All") ? "All Shops" : `${activeTab} Shops`
+        }
         description="Manage and monitor all books on your platform"
         leftContent="null"
       />

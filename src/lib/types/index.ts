@@ -205,3 +205,14 @@ export interface EventTypes {
   price: number;
   status: string;
 }
+
+export interface BusinessTypes {
+  businessName: string;
+  email: string;
+  image: string;
+  plan: string;
+  employees: number;
+  activeCourses: number;
+  totalSpent: number;
+  status: string;
+}

@@ -1,8 +1,13 @@
 "use client";
 
 import AnalyticsStates from "@/components/(superAdmin)/analytics/AnalyticsStates";
-import RevenueBreakdownChart from "@/components/(superAdmin)/analytics/RevenueBreakdownChart";
-import RevenueDistributionChart from "@/components/(superAdmin)/analytics/RevenueDistributionChart";
+import ContentGrowthChart from "@/components/(superAdmin)/analytics/charts/ContentGrowthChart";
+import CourseCategoriesChart from "@/components/(superAdmin)/analytics/charts/CourseCategoriesChart";
+import EnrolmentTrendsChart from "@/components/(superAdmin)/analytics/charts/EnrolmentTrendsChart";
+import RevenueBreakdownChart from "@/components/(superAdmin)/analytics/charts/RevenueBreakdownChart";
+import RevenueDistributionChart from "@/components/(superAdmin)/analytics/charts/RevenueDistributionChart";
+import UsersOverviewChart from "@/components/(superAdmin)/analytics/charts/UsersOverviewChart";
+import SelectMonthDropdown from "@/components/(superAdmin)/analytics/SelectMonthDropdown";
 import Tabs from "@/components/Tabs";
 import { Button } from "@/components/ui/button";
 import {
@@ -47,37 +52,24 @@ export default function Analytics() {
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
 
         {/* Dropdown */}
-        <DropdownMenu>
-          <DropdownMenuTrigger
-            asChild
-            className="px-6 py-6 shadow-none border-none"
-          >
-            <Button variant="outline" className="text-base inline-flex">
-              <span>This month</span> <FaAngleDown />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56" align="start">
-            <DropdownMenuLabel className="text-base">
-              Select a month
-            </DropdownMenuLabel>
-            <DropdownMenuGroup>
-              {months.map((month: string) => (
-                <DropdownMenuItem key={month} className="text-base">
-                  {month}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuGroup>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <SelectMonthDropdown months={months} />
       </div>
 
       {/* Tab Contents */}
       {activeTab === tabs[0] && (
-        <div className="w-full flex items-center justify-between gap-6">
+        <div className="w-full h-fit grid grid-cols-1 lg:grid-cols-2 gap-6">
           <RevenueBreakdownChart />
           <RevenueDistributionChart />
         </div>
       )}
+      {activeTab === tabs[1] && <EnrolmentTrendsChart />}
+      {activeTab === tabs[2] && (
+        <div className="w-full h-fit grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <CourseCategoriesChart />
+          <ContentGrowthChart />
+        </div>
+      )}
+      {activeTab === tabs[3] && <UsersOverviewChart />}
     </div>
   );
 }

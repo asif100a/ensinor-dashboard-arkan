@@ -9,7 +9,7 @@ export default function RevenueDistributionChart() {
   };
 
   return (
-    <div className="w-full bg-white rounded-lg shadow p-6">
+    <div className="w-full h-full bg-white rounded-lg shadow p-6">
       <h2 className="text-2xl font-semibold mb-6">Earning Overview</h2>
       <Chart
         options={options}

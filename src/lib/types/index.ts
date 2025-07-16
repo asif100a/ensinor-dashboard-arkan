@@ -1,4 +1,10 @@
-export type UserRole = "student" | "instructor" | "employee" | "businessInstructor" | "companysAdmin" | "superAdmin";
+export type UserRole =
+  | "student"
+  | "instructor"
+  | "employee"
+  | "businessInstructor"
+  | "companysAdmin"
+  | "superAdmin";
 
 export type InviteType = "individual" | "group";
 
@@ -105,6 +111,7 @@ export interface StudentTypes {
   courseName?: string;
   active?: string;
   enrolledDate?: string;
+  status?: string;
 }
 
 export interface WithdrawTypes {

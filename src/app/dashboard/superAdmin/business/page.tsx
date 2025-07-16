@@ -9,6 +9,7 @@ import { FiPlus } from "react-icons/fi";
 import { BusinessTypes, StudentTypes } from "@/lib/types";
 import BusinessTable from "@/components/(superAdmin)/business/BusinessTable";
 import PrintAndExportButtons from "@/components/PrintAndExportButtons";
+import CreateBusinessPopup from "@/components/custom-ui/popups/CreateBusinessPopup";
 
 const tabs: string[] = ["All Business", "Active", "Inactive", "Under Review"];
 
@@ -157,7 +158,7 @@ export default function Business() {
           className={`w-fit text-left px-6 py-3.5 bg-yellow-primary flex items-center gap-2 text-black-primary font-semibold text-nowrap rounded-lg cursor-pointer`}
         >
           <FiPlus className="text-xl" />
-          <span>Add Student</span>
+          <span>Create Business</span>
         </button>
       </div>
 
@@ -206,6 +207,11 @@ export default function Business() {
 
       {/* Print & Export::Buttons */}
       <PrintAndExportButtons />
+
+      {/* Create Business Popup */}
+      {isAddStudentsOpen && (
+        <CreateBusinessPopup setIsOpenPopup={setIsAddStudentsOpen} />
+      )}
     </div>
   );
 }

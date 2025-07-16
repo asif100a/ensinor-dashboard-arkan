@@ -103,7 +103,7 @@ export default function AddStudentPopup({
       >
         {/* Title */}
         <h3 className="text-2xl font-semibold text-black-primary w-full px-6 py-6">
-          Add An Instructor
+          Add A Student
         </h3>
 
         {/* Form */}
@@ -113,7 +113,7 @@ export default function AddStudentPopup({
         >
           <div className="w-full grid grid-cols-2 gap-6">
             {/* Name */}
-            <div className="w-full">
+            <div className="col-span-2 w-full">
               <label htmlFor="flatName" className={labelClassNames}>
                 Name
               </label>
@@ -121,7 +121,7 @@ export default function AddStudentPopup({
                 type="text"
                 id="flatName"
                 className={inputFieldClassNames}
-                placeholder="Enter teacher name"
+                placeholder="Enter student name"
                 // {...register("flatName", { required: true })}
               />
               {/* {errors.flatName && (
@@ -137,28 +137,58 @@ export default function AddStudentPopup({
                 type="email"
                 id="flatName"
                 className={inputFieldClassNames}
-                placeholder="Enter teacher email"
+                placeholder="Enter student email"
                 // {...register("flatName", { required: true })}
               />
               {/* {errors.flatName && (
             <span className="text-sm text-red-500">This field is required</span>
           )} */}
             </div>
-            {/* Specialization */}
+            {/* Image */}
+            <div>
+              <label htmlFor="image" className={labelClassNames}>
+                Image
+              </label>
+              <input
+                type="file"
+                className="block w-full text-black-normal bg-white border border-gray-200 rounded-md file:bg-gray-background file:text-black-normal file:text-base file:px-4 file:py-4 file:border-none file:mr-4 placeholder-gray-400/70 dark:placeholder-gray-500 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 "
+              />
+              {/* {errors.image && (
+            <span className="text-sm text-red-500">This field is required</span>
+          )} */}
+            </div>
+            {/* Address */}
+            <div className="w-full">
+              <label htmlFor="flatName" className={labelClassNames}>
+                Address
+              </label>
+              <input
+                type="text"
+                id="flatName"
+                className={inputFieldClassNames}
+                placeholder="Enter the address"
+                // {...register("flatName", { required: true })}
+              />
+              {/* {errors.flatName && (
+            <span className="text-sm text-red-500">This field is required</span>
+          )} */}
+            </div>
+            {/* Department */}
             <div className="grid gap-3">
               <Label htmlFor="phoneNumber" className=" text-lg">
-                Specialization
+                Department
               </Label>
               <Select>
-                <SelectTrigger className={`${inputFieldClassNames} py-[26px] shadow-none`}>
-                  <SelectValue placeholder="Select a specialization" />
+                <SelectTrigger
+                  className={`${inputFieldClassNames} py-[26px] shadow-none`}
+                >
+                  <SelectValue placeholder="Select a status" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Select a specialization</SelectLabel>
-                    <SelectItem value="easy">UI/UX Design</SelectItem>
-                    <SelectItem value="medium">Frontend</SelectItem>
-                    <SelectItem value="hard">AI/ML</SelectItem>
+                    <SelectLabel>Select a department</SelectLabel>
+                    <SelectItem value="easy">Engineering</SelectItem>
+                    <SelectItem value="medium">Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -166,63 +196,48 @@ export default function AddStudentPopup({
             <span className="text-sm text-red-500">This field is required</span>
           )} */}
             </div>
-            {/* Courses */}
+            {/* Enrolled Courses */}
             <div className="w-full">
               <label htmlFor="flatName" className={labelClassNames}>
-                Courses
+                Enrolled Courses
               </label>
               <input
                 type="number"
                 id="flatName"
                 className={inputFieldClassNames}
-                placeholder="Enter total courses"
+                placeholder="Enter total enrolled courses"
                 // {...register("flatName", { required: true })}
               />
               {/* {errors.flatName && (
             <span className="text-sm text-red-500">This field is required</span>
           )} */}
             </div>
-            {/* Students */}
+            {/* Progress */}
             <div className="w-full">
               <label htmlFor="flatName" className={labelClassNames}>
-                Students
+                Progress
               </label>
               <input
                 type="number"
                 id="flatName"
                 className={inputFieldClassNames}
-                placeholder="Enter total students"
+                placeholder="Enter course progress"
                 // {...register("flatName", { required: true })}
               />
               {/* {errors.flatName && (
             <span className="text-sm text-red-500">This field is required</span>
           )} */}
             </div>
-            {/* Rating */}
+            {/* Active */}
             <div className="w-full">
               <label htmlFor="flatName" className={labelClassNames}>
-                Rating
-              </label>
-              <StarRating rating={rating} setRating={setRating} />
-              <p className="mt-2 text-sm text-gray-600">
-                {rating > 0
-                  ? `You rated ${rating} star${rating > 1 ? "s" : ""}`
-                  : "Select a rating"}
-              </p>
-              {/* {errors.flatName && (
-            <span className="text-sm text-red-500">This field is required</span>
-          )} */}
-            </div>
-            {/* Earning */}
-            <div className="w-full">
-              <label htmlFor="flatName" className={labelClassNames}>
-                Earning
+                Active
               </label>
               <input
-                type="number"
+                type="text"
                 id="flatName"
                 className={inputFieldClassNames}
-                placeholder="Enter total Earning"
+                placeholder="Enter the activated time"
                 // {...register("flatName", { required: true })}
               />
               {/* {errors.flatName && (
@@ -235,7 +250,9 @@ export default function AddStudentPopup({
                 Status
               </Label>
               <Select>
-                <SelectTrigger className={`${inputFieldClassNames} py-[26px] shadow-none`}>
+                <SelectTrigger
+                  className={`${inputFieldClassNames} py-[26px] shadow-none`}
+                >
                   <SelectValue placeholder="Select a status" />
                 </SelectTrigger>
                 <SelectContent>

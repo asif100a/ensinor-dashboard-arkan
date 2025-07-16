@@ -6,10 +6,10 @@ import SectionHeader from "@/components/SectionHeader";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FiPlus } from "react-icons/fi";
-import ReviewInstructorList from "@/components/(superAdmin)/Instructors/ReviewInstructorList";
 import StudentsTable from "@/components/(superAdmin)/students/StudentsTable";
 import { StudentTypes } from "@/lib/types";
 import PrintAndExportButtons from "@/components/PrintAndExportButtons";
+import AddStudentPopup from "@/components/custom-ui/popups/AddStudentPopup";
 
 const tabs: string[] = ["All Students", "Active", "Inactive", "Under Review"];
 
@@ -144,7 +144,7 @@ export default function Students() {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row items-center gap-6">
         <SectionHeader
-          title="Instructors"
+          title="Students"
           description="Manage and monitor all Instructors on your platform"
           leftContent="null"
         />
@@ -194,6 +194,9 @@ export default function Students() {
 
       {/* Print & Export::Buttons */}
       <PrintAndExportButtons />
+
+      {/* Add Student Popup */}
+      {isAddStudentsOpen && <AddStudentPopup setIsOpenPopup={setIsAddStudentsOpen} />}
     </div>
   );
 }

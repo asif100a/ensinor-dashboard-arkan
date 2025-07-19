@@ -8,8 +8,16 @@ export const studentLinks: SidebarLink[] = [
     icon: "/icons/book.svg",
   },
   { name: "My CV", url: "/dashboard/students/cv", icon: "/icons/cv.svg" },
-  { name: "My Subscriptions", url: "/dashboard/students/subscriptions", icon: "/icons/subscribe.svg" },
-  { name: "Communication", url: "/dashboard/students/communication", icon: "/icons/chat.svg" },
+  {
+    name: "My Subscriptions",
+    url: "/dashboard/students/subscriptions",
+    icon: "/icons/subscribe.svg",
+  },
+  {
+    name: "Communication",
+    url: "/dashboard/students/communication",
+    icon: "/icons/chat.svg",
+  },
   {
     name: "Quizzes",
     url: "/dashboard/students/quizzes",
@@ -85,6 +93,11 @@ export const employeeLinks: SidebarLink[] = [
     icon: "/icons/subscription.svg",
   },
   {
+    name: "Communication",
+    url: "/dashboard/employees/communication",
+    icon: "/icons/chat.svg",
+  },
+  {
     name: "Quizzes",
     url: "/dashboard/employees/quizzes",
     icon: "/icons/intelligent.svg",
@@ -119,6 +132,11 @@ export const businessInstructorLinks: SidebarLink[] = [
     icon: "/icons/bundle.svg",
   },
   {
+    name: "Reports",
+    url: "/dashboard/businessInstructor/reports",
+    icon: "/icons/report.svg",
+  },
+  {
     name: "Co-Instructors",
     url: "/dashboard/businessInstructor/co-instructors",
     icon: "/icons/user.svg",
@@ -132,6 +150,16 @@ export const businessInstructorLinks: SidebarLink[] = [
     name: "Students",
     url: "/dashboard/businessInstructor/students",
     icon: "/icons/student.svg",
+  },
+  {
+    name: "Invitations",
+    url: "/dashboard/businessInstructor/invitations",
+    icon: "/icons/open-mail.svg",
+  },
+  {
+    name: "Financial",
+    url: "/dashboard/businessInstructor/financial",
+    icon: "/icons/finance.svg",
   },
   {
     name: "Reviews",

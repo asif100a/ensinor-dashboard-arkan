@@ -1,4 +1,4 @@
-import QuizCards from "@/components/(employee)/quizzes/QuizCards";
+import QuizCards from "@/components/(student-employee)/quizzes/QuizCards";
 import SectionHeader from "@/components/SectionHeader";
 import { QuizTypes } from "@/lib/types";
 import React from "react";
@@ -44,7 +44,7 @@ export default function Quizzes() {
         leftContent="null"
       />
 
-          <QuizCards quizzesData={quizzesData} />
+          <QuizCards quizzesData={quizzesData} userRole="employee" />
     </div>
   );
 }

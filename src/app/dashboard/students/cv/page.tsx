@@ -1,7 +1,7 @@
 "use client";
 
-import CVDetails from '@/components/(student)/cv/CVDetails'
-import ProfileSection from '@/components/(student)/cv/ProfileSection'
+import CVDetails from '@/components/(student-employee)/cv/CVDetails'
+import ProfileSection from '@/components/(student-employee)/cv/ProfileSection'
 import SectionHeader from '@/components/SectionHeader'
 import React, { useState } from 'react'
 

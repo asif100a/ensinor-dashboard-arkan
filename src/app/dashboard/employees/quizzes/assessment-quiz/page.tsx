@@ -20,7 +20,7 @@ export default function AssessmentQuiz() {
 
   const handleNext = () => {
     if (totalQuestions === answeredQuestions) {
-      router.push('/dashboard/employee/grades');
+      router.push('/dashboard/employees/grades');
     } else {
       setAnsweredQuestions(answeredQuestions + 1);
     }

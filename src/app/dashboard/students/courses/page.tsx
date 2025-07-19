@@ -1,11 +1,11 @@
 "use client";
 
 import CourseCard from "@/components/common/CourseCard";
-import Tabs from "@/components/(student)/courses/Tabs";
+import Tabs from "@/components/(student-employee)/courses/Tabs";
 import SectionHeader from "@/components/SectionHeader";
 import { CourseDataTypes, StudentTabTypes } from "@/lib/types";
 import React, { useState } from "react";
-import WishListTable from "@/components/(student)/courses/WishListTable";
+import WishListTable from "@/components/(student-employee)/courses/WishListTable";
 
 const tabs: StudentTabTypes[] = [
   { name: "In Progress", count: 3 },

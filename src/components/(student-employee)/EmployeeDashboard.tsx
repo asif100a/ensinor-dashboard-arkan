@@ -1,8 +1,8 @@
 import React from "react";
-import CompletedCourses from "../(student)/student_dashboard/CompletedCourses";
-import ContinueLearning from "../(student)/student_dashboard/ContinueLearning";
-import MonthlyProgress from "../(student)/student_dashboard/MonthlyProgress";
-import States from "../(student)/student_dashboard/States";
+import CompletedCourses from "../(student-employee)/student_dashboard/CompletedCourses";
+import ContinueLearning from "../(student-employee)/student_dashboard/ContinueLearning";
+import MonthlyProgress from "../(student-employee)/student_dashboard/MonthlyProgress";
+import States from "../(student-employee)/student_dashboard/States";
 
 export default function EmployeeDashboard() {
   return (

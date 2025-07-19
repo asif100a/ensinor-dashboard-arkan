@@ -6,14 +6,15 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 interface QuizCardsProps {
+  userRole: string;
   quizzesData: QuizTypes[];
 }
 
-export default function QuizCards({ quizzesData }: QuizCardsProps) {
+export default function QuizCards({ quizzesData, userRole }: QuizCardsProps) {
   const router = useRouter();
 
   const handleStartQuiz = (quiz: string) => {
-    router.push(`/dashboard/students/quizzes/assessment-quiz?quiz=${quiz}`);
+    router.push(`/dashboard/${userRole}s/quizzes/assessment-quiz?quiz=${quiz}`);
   };
 
   return (

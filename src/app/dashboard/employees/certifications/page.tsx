@@ -1,6 +1,6 @@
 "use client";
 
-import CertificationsCards from "@/components/(employee)/certifications/CertificationsCards";
+import CertificationsCards from "@/components/(student-employee)/certifications/CertificationsCards";
 import SectionHeader from "@/components/SectionHeader";
 import { CertificateTypes } from "@/lib/types";
 import React, { useState } from "react";

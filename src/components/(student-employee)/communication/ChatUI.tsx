@@ -2,11 +2,18 @@
 
 import { SimpleSearchForm } from "@/components/custom-ui/buttons/buttons";
 import Image from "next/image";
-import { FaCircle, FaPaperPlane } from "react-icons/fa";
+import { FaCircle } from "react-icons/fa";
+import { RiSendPlaneFill } from "react-icons/ri";
 
 const ChatUI = () => {
   const handleSearch = () => {
     console.log("Text searched");
+  };
+
+  // Handle Send Message
+  const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Message sent!");
   };
 
   return (
@@ -50,7 +57,6 @@ const ChatUI = () => {
 
       {/* Chat window */}
       <main className="h-full flex-1 bg-white rounded-xl overflow-auto">
-        
         <div className="h-full flex flex-col">
           {/* Chat header */}
           <div className="flex items-center space-x-4 p-4 bg-yellow-primary border-b">
@@ -115,17 +121,20 @@ const ChatUI = () => {
             </div>
 
             {/* Message input */}
-            <div className="border-t px-4 py-6 bg-gray-50">
-              <div className="flex items-center space-x-3">
+            <div className="border-t px-4 py-6">
+              <form
+                onSubmit={handleSendMessage}
+                className="w-full h-fit px-6 bg-gray-background rounded-lg border border-[#E6E6E6] focus:outline-none focus:ring-2 focus:ring-yellow-500 flex justify-center items-center relative"
+              >
                 <input
                   type="text"
-                  placeholder="Type a message"
-                  className="flex-1 px-4 py-2 border rounded-full focus:outline-none focus:ring text-sm"
+                  placeholder="Search"
+                  className="w-full h-auto py-3  text-[#262626] placeholder:text-[#909090] focus:outline-none"
                 />
-                <button className="text-yellow-500 hover:text-yellow-600">
-                  <FaPaperPlane size={20} />
+                <button type="submit" className="cursor-pointer">
+                  <RiSendPlaneFill className="text-2xl text-yellow-500" />
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>

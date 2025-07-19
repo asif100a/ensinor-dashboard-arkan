@@ -1,14 +1,14 @@
 import InstructorDashboard from "@/components/(instructor)/InstructorDashboard";
 import BusinessInstructorDashboard from "@/components/(bInstructor-cAdmin)/BusinessInstructorDashboard";
-import EmployeeDashboard from "@/components/(employee)/EmployeeDashboard";
-import StudentDashboard from "@/components/(student)/StudentDashboard";
+import StudentDashboard from "@/components/(student-employee)/StudentDashboard";
 import { UserRole } from "@/lib/types";
 import React from "react";
 import CompanysAdminDashboard from "@/components/(bInstructor-cAdmin)/CompanysAdminDashboard";
 import SuperAdminDashboard from "@/components/(superAdmin)/SuperAdminDashboard";
+import EmployeeDashboard from "@/components/(student-employee)/EmployeeDashboard";
 
 export default function Dashboard() {
-  const userRole: UserRole = 'student'; // This should be dynamically set based on the logged-in user
+  const userRole: UserRole = 'businessInstructor'; // This should be dynamically set based on the logged-in user
 
   return (
     <div className="flex flex-col md:flex-row">

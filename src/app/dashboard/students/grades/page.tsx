@@ -1,5 +1,5 @@
-import GradesStates from "@/components/(student)/grades/GradesStates";
-import QuizCardsInGrades from "@/components/(student)/grades/QuizCardsInGrades";
+import GradesStates from "@/components/(student-employee)/grades/GradesStates";
+import QuizCardsInGrades from "@/components/(student-employee)/grades/QuizCardsInGrades";
 import SectionHeader from "@/components/SectionHeader";
 import { QuizInGradeTypes, StateTypes } from "@/lib/types";
 import React from "react";

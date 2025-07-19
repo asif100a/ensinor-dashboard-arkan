@@ -8,6 +8,8 @@ export const studentLinks: SidebarLink[] = [
     icon: "/icons/book.svg",
   },
   { name: "My CV", url: "/dashboard/students/cv", icon: "/icons/cv.svg" },
+  { name: "My Subscriptions", url: "/dashboard/students/subscriptions", icon: "/icons/subscribe.svg" },
+  { name: "Communication", url: "/dashboard/students/communication", icon: "/icons/chat.svg" },
   {
     name: "Quizzes",
     url: "/dashboard/students/quizzes",

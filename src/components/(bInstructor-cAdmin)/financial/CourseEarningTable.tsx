@@ -1,6 +1,5 @@
 import SectionHeader from "@/components/SectionHeader";
 import React from "react";
-import getCapitalizedWord from "../../../../utils/getCapitalizedWord";
 import getFormatPrice from "../../../../utils/getFormatPrice";
 
 export interface FinancialTypes {

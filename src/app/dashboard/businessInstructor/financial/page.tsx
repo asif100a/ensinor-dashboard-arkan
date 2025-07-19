@@ -2,6 +2,7 @@
 
 import CourseEarningTable from '@/components/(bInstructor-cAdmin)/financial/CourseEarningTable';
 import FinancialOrdersTable from '@/components/(bInstructor-cAdmin)/financial/FinancialOrdersTable';
+import FinancialPayoutsTable from '@/components/(bInstructor-cAdmin)/financial/FinancialPayoutsTable';
 import FinancialStates from '@/components/(bInstructor-cAdmin)/financial/FinancialStates';
 import SectionHeader from '@/components/SectionHeader'
 import Tabs from '@/components/Tabs'
@@ -30,6 +31,8 @@ export default function Financial() {
         {/* Course Earning Table */}
         {activeTab === tabs[0] && <CourseEarningTable />}
         {activeTab === tabs[1] && <FinancialOrdersTable />}
+
+        {activeTab === tabs[2] && <FinancialPayoutsTable />}
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import CertificateInformation from "@/components/certificate-builder/CertificateInformation";
+import CertificatePreview from "@/components/certificate-builder/CertificatePreview";
 import SectionHeader from "@/components/SectionHeader";
 import React from "react";
 
@@ -12,7 +13,14 @@ export default function CertificateBuilderPage() {
       />
 
       {/* Certificate Information */}
-      <CertificateInformation />
+      <div className="w-full flex items-start gap-6">
+        <div className="w-2/6">
+          <CertificateInformation />
+        </div>
+        <div className="w-4/6">
+          <CertificatePreview />
+        </div>
+      </div>
     </div>
   );
 }

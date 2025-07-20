@@ -19,7 +19,7 @@ interface LinkComponentProps {
 }
 
 export default function Sidebar() {
-  const userRole: UserRole = "businessInstructor"; // This should be dynamically set based on the logged-in user
+  const userRole: UserRole = "companysAdmin"; // This should be dynamically set based on the logged-in user
 
   return (
     <aside className="w-full h-screen overflow-y-auto md:w-[300px] bg-white p-6 flex flex-col shadow-md">

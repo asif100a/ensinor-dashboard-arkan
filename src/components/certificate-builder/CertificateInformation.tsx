@@ -1,11 +1,16 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import Image from "next/image";
 import Toggle from "../custom-ui/inputs/Toggle";
 import { Textarea } from "../ui/textarea";
+import DatePicker from "react-datepicker";
 
 export default function CertificateInformation() {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+
   return (
     <div className="space-y-6">
       {/* Business Information */}
@@ -201,12 +206,10 @@ export default function CertificateInformation() {
             >
               Course Completion Date
             </Label>
-            <Input
-              id="fullName"
-              type="text"
-              placeholder="Enter Business Name"
-              className="w-full h-[60px] px-6 py-2.5 bg-gray-background text-black-normal text-base rounded-lg placeholder:text-black-primary shadow-none border border-[#E6E6E6] input-field-text"
-              required
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date ? date : new Date())}
+              className="w-full h-[60px] px-5 py-4 bg-gray-background text-[#2D2D2D] placeholder:text-[#999999] shadow-none border border-[#E6E6E6] rounded-[8px] input-field-text"
             />
           </div>
           {/* Certificate Reference */}
@@ -219,7 +222,10 @@ export default function CertificateInformation() {
                 Certificate Reference
               </Label>
 
-              <button type="button" className="px-3 py-1 bg-white text-black-primary border border-[#D9D9D9] rounded-md cursor-pointer flex items-center gap-2">
+              <button
+                type="button"
+                className="px-3 py-1 bg-white text-black-primary border border-[#D9D9D9] rounded-md cursor-pointer flex items-center gap-2"
+              >
                 <Image
                   src="/icons/generate.svg"
                   alt="generate"

@@ -8,7 +8,7 @@ import SuperAdminDashboard from "@/components/(superAdmin)/SuperAdminDashboard";
 import EmployeeDashboard from "@/components/(student-employee)/EmployeeDashboard";
 
 export default function Dashboard() {
-  const userRole: UserRole = 'businessInstructor'; // This should be dynamically set based on the logged-in user
+  const userRole: UserRole = 'companysAdmin'; // This should be dynamically set based on the logged-in user
 
   return (
     <div className="flex flex-col md:flex-row">

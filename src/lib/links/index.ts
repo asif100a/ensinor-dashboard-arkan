@@ -231,6 +231,11 @@ export const companysAdminLinks: SidebarLink[] = [
     icon: "/icons/open-mail.svg",
   },
   {
+    name: "Certificate Builder",
+    url: "/dashboard/companysAdmin/certificate-builder",
+    icon: "/icons/make-certificate.svg",
+  },
+  {
     name: "Reviews",
     url: "/dashboard/companysAdmin/reviews",
     icon: "/icons/review.svg",

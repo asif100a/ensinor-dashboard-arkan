@@ -216,3 +216,9 @@ export interface BusinessTypes {
   totalSpent: number;
   status: string;
 }
+
+export interface ConferenceTypes {
+  conferenceTool: string;
+  description: string;
+  status: "completed" | "incomplete";
+}

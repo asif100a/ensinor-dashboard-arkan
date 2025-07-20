@@ -162,6 +162,21 @@ export const businessInstructorLinks: SidebarLink[] = [
     icon: "/icons/finance.svg",
   },
   {
+    name: "Resources",
+    url: "/dashboard/businessInstructor/resources",
+    icon: "/icons/doc.svg",
+  },
+  {
+    name: "Integration",
+    url: "/dashboard/businessInstructor/integration",
+    icon: "/icons/integration.svg",
+  },
+  {
+    name: "Certificate Builder",
+    url: "/dashboard/businessInstructor/certificate-builder",
+    icon: "/icons/make-certificate.svg",
+  },
+  {
     name: "Reviews",
     url: "/dashboard/businessInstructor/reviews",
     icon: "/icons/review.svg",

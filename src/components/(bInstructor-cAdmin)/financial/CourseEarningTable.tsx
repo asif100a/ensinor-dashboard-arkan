@@ -73,7 +73,7 @@ export default function CourseEarningTable() {
       <SectionHeader
         title="Course Earning"
         description="Manage your earnings, orders, and payouts"
-        leftContent="null"
+        leftContent="simpleSearchForm"
       />
 
       {/* Table */}

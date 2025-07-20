@@ -69,7 +69,7 @@ export default function FinancialPayoutsTable() {
       <SectionHeader
         title="Orders"
         description="Recent purchases of your courses"
-        leftContent="null"
+        leftContent="simpleSearchForm"
       />
 
       {/* Table */}

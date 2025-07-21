@@ -1,12 +1,77 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { UserRole } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import {setCurrentUser} from "../../../../hooks/manageUser";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
+type InputUserTypes = {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+};
 
 export default function SignIn() {
+   const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<InputUserTypes>();
+
+  const handleSignIn: SubmitHandler<InputUserTypes> = async (data) => {
+    const toastId = toast.loading("Signing the user");
+    console.log("toastId: ", toastId);
+    console.log("Sign in data: ", data);
+    let userRole: UserRole = "";
+
+    switch (data?.email) {
+      case "student@gmail.com":
+        userRole = "student";
+        break;
+      case "instructor@gmail.com":
+        userRole = "instructor";
+        break;
+      case "employee@gmail.com":
+        userRole = "employee";
+        break;
+      case "businessInstructor@gmail.com":
+        userRole = "businessInstructor";
+        break;
+      case "companysAdmin@gmail.com":
+        userRole = "companysAdmin";
+        break;
+      case "superAdmin@gmail.com":
+        userRole = "superAdmin";
+        break;
+      default:
+        userRole = "";
+        toast.dismiss(toastId);
+        toast.error("This email not found!");
+    }
+
+    if (!userRole) return;
+    if (!(data.password === "112233")) {
+      toast.dismiss(toastId);
+      return toast.error("Password does no match");
+    }
+
+    const res = await setCurrentUser(userRole);
+    console.log("Login Response: ", res);
+    toast.dismiss(toastId);
+    toast.success(res.message);
+    router.push('/dashboard');
+  };
+
   return (
     <div className="flex items-center xl:gap-[70px] lg:gap-12 w-full h-screen overflow-hidden bg-white dark:bg-gray-800 p-6">
       <div className="lg:w-3/5">
@@ -45,7 +110,10 @@ export default function SignIn() {
 
           <div>
             <CardContent>
-              <form className="grid gap-12">
+              <form
+                onSubmit={handleSubmit(handleSignIn)}
+                className="grid gap-12"
+              >
                 <div className="flex flex-col gap-12">
                   <div className="grid gap-3">
                     <Label htmlFor="email">Email</Label>
@@ -55,6 +123,7 @@ export default function SignIn() {
                       placeholder="Enter your email"
                       className="w-full h-[60px] px-5 py-4 bg-[#FFFFFF] text-[#2D2D2D] placeholder:text-[#999999] shadow-none border-[#E6E6E6] rounded-[8px] input-field-text"
                       required
+                      {...register("email", { required: true })}
                     />
                   </div>
                   <div className="grid gap-3">
@@ -65,6 +134,7 @@ export default function SignIn() {
                       placeholder="Enter your password"
                       className="w-full h-[60px] px-5 py-4 bg-[#FFFFFF] text-[#2D2D2D] placeholder:text-[#999999] shadow-none border-[#E6E6E6] rounded-[8px] input-field-text"
                       required
+                      {...register("password", { required: true })}
                     />
                   </div>
 
@@ -72,10 +142,10 @@ export default function SignIn() {
                     <div className="flex items-center gap-2">
                       <Input
                         type="checkbox"
-                        name="rememberMe"
                         id="rememberMe"
                         className="w-5 h-5"
                         required
+                        {...register("rememberMe", { required: true })}
                       />
                       <Label htmlFor="rememberMe">Remember me</Label>
                     </div>

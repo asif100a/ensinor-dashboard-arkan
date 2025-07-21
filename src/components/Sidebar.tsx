@@ -11,15 +11,24 @@ import {
 import { SidebarLink, UserRole } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 interface LinkComponentProps {
   links: SidebarLink[];
 }
 
-export default function Sidebar() {
-  const userRole: UserRole = "companysAdmin"; // This should be dynamically set based on the logged-in user
+interface SidebarProps {
+  userRole: string;
+}
+
+export default function Sidebar({userRole}: SidebarProps) {
+  console.log("User role from sidebar: ", userRole);
+  const router = useRouter();
+
+  const handleLogout = () => {
+    router.push("/sign-in");
+  };
 
   return (
     <aside className="w-full h-screen overflow-y-auto md:w-[300px] bg-white p-6 flex flex-col shadow-md">
@@ -66,6 +75,7 @@ export default function Sidebar() {
         {/* Bottom Link */}
         <div>
           <button
+            onClick={handleLogout}
             className={`w-full text-left px-6 py-3.5 border border-yellow-primary flex items-center gap-2 text-black-primary rounded-lg cursor-pointer`}
           >
             <Image

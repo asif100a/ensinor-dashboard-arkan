@@ -4,7 +4,11 @@ export type UserRole =
   | "employee"
   | "businessInstructor"
   | "companysAdmin"
-  | "superAdmin";
+  | "superAdmin" | "";
+  
+  export interface User {
+    userRole: string;
+  }
 
 export type InviteType = "individual" | "group";
 

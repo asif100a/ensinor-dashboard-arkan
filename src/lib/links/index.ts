@@ -58,6 +58,11 @@ export const instructorLinks: SidebarLink[] = [
     icon: "/icons/student.svg",
   },
   {
+    name: "Communication",
+    url: "/dashboard/instructors/communication",
+    icon: "/icons/chat.svg",
+  },
+  {
     name: "Reviews",
     url: "/dashboard/instructors/reviews",
     icon: "/icons/review.svg",
@@ -204,6 +209,11 @@ export const companysAdminLinks: SidebarLink[] = [
     name: "Courses-Bundle",
     url: "/dashboard/companysAdmin/courses-bundle",
     icon: "/icons/bundle.svg",
+  },
+  {
+    name: "Reports",
+    url: "/dashboard/companysAdmin/reports",
+    icon: "/icons/report.svg",
   },
   {
     name: "Co-Instructors",

@@ -67,8 +67,8 @@ export default function FinancialPayoutsTable() {
   return (
     <div className="p-6 bg-white rounded-xl space-y-8">
       <SectionHeader
-        title="Orders"
-        description="Recent purchases of your courses"
+        title="Payouts"
+        description="History of your earnings payouts"
         leftContent="simpleSearchForm"
       />
 

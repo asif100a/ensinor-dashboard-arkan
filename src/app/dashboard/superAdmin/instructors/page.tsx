@@ -12,7 +12,7 @@ import InstructorCard from "@/components/custom-ui/cards/instructors/InstructorC
 import ReviewInstructorList from "@/components/(superAdmin)/Instructors/ReviewInstructorList";
 import AddInstructorPopup from "@/components/custom-ui/popups/AddInstructorPopup";
 
-const tabs: string[] = ["All Instructors", "Active", "Inactive", "Under Review"];
+const tabs: string[] = ["All Instructors", "active", "inactive", "Under Review"];
 
 const instructors: InstructorTypes[] = [
   {
@@ -24,7 +24,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Active",
+    status: "active",
   },
   {
    instructorName: "Shahid Hasan",
@@ -35,7 +35,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Inactive",
+    status: "inactive",
   },
   {
     instructorName: "Shahid Hasan",
@@ -46,7 +46,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Active",
+    status: "active",
   },
   {
    instructorName: "Shahid Hasan",
@@ -57,7 +57,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Inactive",
+    status: "inactive",
   },
   {
     instructorName: "Shahid Hasan",
@@ -68,7 +68,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Active",
+    status: "active",
   },
   {
    instructorName: "Shahid Hasan",
@@ -79,7 +79,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Inactive",
+    status: "inactive",
   },
   {
     instructorName: "Shahid Hasan",
@@ -90,7 +90,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Active",
+    status: "active",
   },
   {
    instructorName: "Shahid Hasan",
@@ -101,7 +101,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Inactive",
+    status: "inactive",
   },
   {
     instructorName: "Shahid Hasan",
@@ -112,7 +112,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Active",
+    status: "active",
   },
   {
    instructorName: "Shahid Hasan",
@@ -123,7 +123,7 @@ const instructors: InstructorTypes[] = [
     students: 2056,
     rating: 4.8,
     earning: 450000,
-    status: "Inactive",
+    status: "inactive",
   },
 ];
 
@@ -135,10 +135,10 @@ export default function Instructors() {
 
   useEffect(() => {
     if(instructors.length > 0) {
-      const filteredActive = instructors?.filter(sh => sh.status === 'Active');
+      const filteredActive = instructors?.filter(sh => sh.status === 'active');
       setActiveInstructors(filteredActive);
 
-      const filteredInactive = instructors?.filter(sh => sh.status === 'Inactive');
+      const filteredInactive = instructors?.filter(sh => sh.status === 'inactive');
       setInactiveInstructors(filteredInactive);
     }
   }, [instructors]);

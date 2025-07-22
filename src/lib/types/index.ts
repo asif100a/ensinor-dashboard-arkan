@@ -196,7 +196,7 @@ export interface InstructorTypes {
   students: number;
   rating: number;
   earning: number;
-  status: string;
+  status: "active" | "inactive" | "review";
 }
 
 export interface EventTypes {

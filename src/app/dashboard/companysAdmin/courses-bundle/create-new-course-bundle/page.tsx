@@ -22,7 +22,7 @@ export default function CreateNewCourseBundle() {
         leftContent="null"
       />
 
-      <Card className="w-full bg-inherit border-none shadow-none md:px-[24px] py-[28px] mx-auto">
+      <Card className="w-full bg-inherit border-none shadow-none mx-auto">
         <div>
           <CardContent>
             <form className="grid gap-8">

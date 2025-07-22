@@ -1,7 +1,7 @@
 "use client";
 
 import SectionHeader from "@/components/SectionHeader";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiDownload, FiPlus } from "react-icons/fi";
 import InstructorsTable from "@/components/(bInstructor-cAdmin)/instructors/InstructorsTable";
 import { InstructorTypes } from "@/lib/types";
@@ -71,7 +71,7 @@ const allInstructor: InstructorTypes[] = [
     students: 4700,
     rating: 4.9,
     earning: 34000,
-    status: "inactive",
+    status: "review",
   },
   {
     instructorName: "Shahid Hasan",
@@ -93,7 +93,7 @@ const allInstructor: InstructorTypes[] = [
     students: 4700,
     rating: 4.9,
     earning: 34000,
-    status: "inactive",
+    status: "review",
   },
   {
     instructorName: "Shahid Hasan",
@@ -121,8 +121,22 @@ const allInstructor: InstructorTypes[] = [
 
 export default function Instructors() {
   const [activeTab, setActiveTab] = useState<string>(tabs[0]);
+  const [activeInstructors, setActiveInstructors] = useState<InstructorTypes[]>([]);
+  const [inactiveInstructors, setInActiveInstructors] = useState<InstructorTypes[]>([]);
+  const [reviewInstructors, setReviewInstructors] = useState<InstructorTypes[]>([]);
   const [isAddInstructorOpen, setIsAddInstructorOpen] =
     useState<boolean>(false);
+
+    useEffect(() => {
+      const filteredActive = allInstructor.filter((instructor: InstructorTypes) => instructor.status === 'active');
+      setActiveInstructors(filteredActive);
+
+      const filteredInactive = allInstructor.filter((instructor: InstructorTypes) => instructor.status === 'inactive');
+      setInActiveInstructors(filteredInactive);
+
+      const filteredReview = allInstructor.filter((instructor: InstructorTypes) => instructor.status === 'review');
+      setReviewInstructors(filteredReview);
+    }, [allInstructor]);
 
   const handleSearch = () => {
     console.log("Form searched");
@@ -186,7 +200,18 @@ export default function Instructors() {
         </div>
 
         {/* Table */}
-        <InstructorsTable tHeads={tHeads} allInstructor={allInstructor} />
+        {activeTab === tabs[0] && (
+          <InstructorsTable tHeads={tHeads} instructors={allInstructor} />
+        )}
+        {activeTab === tabs[1] && (
+          <InstructorsTable tHeads={tHeads} instructors={activeInstructors} />
+        )}
+        {activeTab === tabs[2] && (
+          <InstructorsTable tHeads={tHeads} instructors={inactiveInstructors} />
+        )}
+        {activeTab === tabs[3] && (
+          <InstructorsTable tHeads={tHeads} instructors={reviewInstructors} />
+        )}
 
         {/* PDF & Export::Button */}
         <div className="flex justify-end items-center gap-6">
@@ -208,7 +233,9 @@ export default function Instructors() {
       </div>
 
       {/* Add Instructor::Popup */}
-      {isAddInstructorOpen && <AddInstructorPopup setIsOpenPopup={setIsAddInstructorOpen} />}
+      {isAddInstructorOpen && (
+        <AddInstructorPopup setIsOpenPopup={setIsAddInstructorOpen} />
+      )}
     </div>
   );
 }

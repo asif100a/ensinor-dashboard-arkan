@@ -6,12 +6,12 @@ import { InstructorTypes } from "@/lib/types";
 
 interface InstructorsTableProps {
   tHeads: string[];
-  allInstructor: InstructorTypes[];
+  instructors: InstructorTypes[];
 }
 
 export default function InstructorsTable({
   tHeads,
-  allInstructor,
+  instructors,
 }: InstructorsTableProps) {
   return (
     <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -34,7 +34,7 @@ export default function InstructorsTable({
             </thead>
             {/* T Body */}
             <tbody className="">
-              {allInstructor.map((instructor: InstructorTypes) => (
+              {instructors.map((instructor: InstructorTypes) => (
                 <tr
                   key={instructor.email}
                   className="border-b border-[#606060]"
@@ -95,10 +95,10 @@ export default function InstructorsTable({
                       <span
                         className={`px-2 py-1 ${
                           instructor.status === "active"
-                            ? "text-[#4BB54B] bg-[#4BB54B1A]"
-                            : instructor.status === "Pending"
-                            ? "text-[#FD7E14] bg-[#FFF2E6]"
-                            : "text-[#D70000] bg-[#FF53536B]"
+                            ? "bg-[#067A3A4D] text-[#067A3A]"
+                            : instructor.status === "review"
+                            ? "bg-[#FFFAE6] text-[#CCB247]"
+                            : "bg-[#FFD7D7] text-[#CA1D1D]"
                         } text-sm rounded-sm`}
                       >
                         {getCapitalizedWord(instructor.status)}

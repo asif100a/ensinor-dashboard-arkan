@@ -47,7 +47,7 @@ export default function CoursesBundle() {
         title="Course Bundle List"
         description=""
         leftContent="null"
-        options={{ name: "button", content: "Create a New Bundle-Course", link: "/dashboard/businessInstructor/courses-bundle/create-new-course-bundle", type: "fill" }}
+        options={{ name: "link", content: "Create a New Bundle-Course", link: "/dashboard/companysAdmin/courses-bundle/create-new-course-bundle", type: "fill" }}
       />
 
       <div className="p-6 space-y-6 bg-white rounded-lg">

@@ -240,10 +240,20 @@ export const companysAdminLinks: SidebarLink[] = [
     url: "/dashboard/companysAdmin/instructors",
     icon: "/icons/user.svg",
   },
+   {
+    name: "Financial",
+    url: "/dashboard/companysAdmin/financial",
+    icon: "/icons/finance.svg",
+  },
   {
     name: "Invitations",
     url: "/dashboard/companysAdmin/invitations",
     icon: "/icons/open-mail.svg",
+  },
+  {
+    name: "Integration",
+    url: "/dashboard/companysAdmin/integration",
+    icon: "/icons/integration.svg",
   },
   {
     name: "Certificate Builder",

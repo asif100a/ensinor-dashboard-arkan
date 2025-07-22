@@ -65,7 +65,7 @@ export default function EditQuizPopup({ setIsOpenPopup }: AddDegreePopupProps) {
       <div className="relative bg-white max-w-3xl w-full rounded-lg z-20 overflow-hidden">
         {/* Title */}
         <h3 className="text-2xl font-semibold text-black-primary w-full px-6 py-6">
-          Add New Flat
+          Edit the Quiz
         </h3>
         {/* Form */}
         <form

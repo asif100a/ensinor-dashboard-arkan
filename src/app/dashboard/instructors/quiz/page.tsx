@@ -1,5 +1,6 @@
 "use client";
 
+import QuizAccordion from "@/components/(instructor)/instructor_quiz/QuizAccordion";
 import QuizCard from "@/components/(instructor)/instructor_quiz/QuizCard";
 import CreateNewQuizPopup from "@/components/custom-ui/popups/CreateNewQuizPopup";
 import { InstructorQuizTypes } from "@/lib/types";
@@ -25,6 +26,9 @@ export default function Quiz() {
           Create a New Quiz
         </button>
       </div>
+
+      {/* Quiz Accordion */}
+      <QuizAccordion />
 
       {createQuizPopupOpen && (
         <CreateNewQuizPopup setIsOpenPopup={setCreateQuizPopupOpen} />

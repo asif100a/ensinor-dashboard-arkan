@@ -146,6 +146,11 @@ export const businessInstructorLinks: SidebarLink[] = [
     url: "/dashboard/businessInstructor/co-instructors",
     icon: "/icons/user.svg",
   },
+   {
+    name: "Communication",
+    url: "/dashboard/businessInstructor/communication",
+    icon: "/icons/chat.svg",
+  },
   {
     name: "Events & Webinars",
     url: "/dashboard/businessInstructor/events-and-webinars",

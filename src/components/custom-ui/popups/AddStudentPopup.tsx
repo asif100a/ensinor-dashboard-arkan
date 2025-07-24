@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/select";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import StarRating from "../inputs/StarRating";
 
 interface AddStudentPopupProps {
   setIsOpenPopup: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,29 +23,29 @@ interface AddStudentPopupProps {
 
 // interface FormData {}
 
-interface SpeakerTypes {
-  id: number;
-  speakerName: string;
-  profession: string;
-  photo: null | object;
-  speakTime: string;
-}
+// interface SpeakerTypes {
+//   id: number;
+//   speakerName: string;
+//   profession: string;
+//   photo: null | object;
+//   speakTime: string;
+// }
 
 export default function AddStudentPopup({
   setIsOpenPopup,
 }: AddStudentPopupProps) {
   const [loading, setLoading] = useState(false);
-  const [rating, setRating] = useState(0);
+  // const [rating, setRating] = useState(0);
 
-  // Catch Rating value
-  const handleRating = (rate: number) => {
-    setRating(rate);
-  };
+  // // Catch Rating value
+  // const handleRating = (rate: number) => {
+  //   setRating(rate);
+  // };
 
-  const handleReset = () => {
-    // Set the initial value
-    setRating(0);
-  };
+  // const handleReset = () => {
+  //   // Set the initial value
+  //   setRating(0);
+  // };
 
   const {
     // register,

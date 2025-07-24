@@ -1,18 +1,36 @@
 import Image from "next/image";
 import React from "react";
+import Chart from 'react-apexcharts';
+import { ApexOptions } from "apexcharts";
+import { shortMonths } from "@/lib/utils";
 
-const data = [
-  { month: "Jan", value: 30 },
-  { month: "Feb", value: 80 },
-  { month: "Mar", value: 50 },
-  { month: "Apr", value: 90 },
-  { month: "Jun", value: 15 },
-  { month: "Aug", value: 50 },
-  { month: "Sep", value: 120 },
-  { month: "Oct", value: 110 },
-  { month: "Nov", value: 15 },
-  { month: "Dec", value: 150 },
-];
+const options: ApexOptions = {
+  chart: {
+    height: 280,
+    type: "area",
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: "Series 1",
+      data: [45, 52, 38, 45, 19, 23, 2],
+    },
+  ],
+  fill: {
+    type: "gradient",
+    gradient: {
+      shadeIntensity: 1,
+      opacityFrom: 0.7,
+      opacityTo: 0.9,
+      stops: [0, 90, 100],
+    },
+  },
+  xaxis: {
+    categories: shortMonths,
+  },
+};
 
 export default function OverviewChart() {
   return (
@@ -67,89 +85,14 @@ export default function OverviewChart() {
       </div>
 
       {/* Chart */}
-      <div className="relative w-full">
-        <svg className="w-fit h-64" viewBox="0 0 400 200">
-          {/* Grid and Axes */}
-          <g fill="none" stroke="#e5e7eb" strokeWidth="1">
-            <line x1="10" y1="180" x2="390" y2="180" />
-            <line x1="10" y1="140" x2="390" y2="140" />
-            <line x1="10" y1="100" x2="390" y2="100" />
-            <line x1="10" y1="60" x2="390" y2="60" />
-            <line x1="10" y1="20" x2="390" y2="20" />
-            <line x1="10" y1="10" x2="390" y2="10" />
-          </g>
-          {/* Data Points and Line */}
-          <polyline
-            fill="none"
-            stroke="#f59e0b"
-            strokeWidth="2"
-            points="30,170 70,100 110,120 150,150 190,50 230,70 270,130 310,200 350,150 370,30"
-          />
-          {/* Yellow Dots for Data Points */}
-          <circle cx="30" cy="170" r="3" fill="#f59e0b" />
-          <circle cx="70" cy="100" r="3" fill="#f59e0b" />
-          <circle cx="110" cy="120" r="3" fill="#f59e0b" />
-          <circle cx="150" cy="150" r="3" fill="#f59e0b" />
-          <circle cx="190" cy="50" r="3" fill="#f59e0b" />
-          <circle cx="230" cy="70" r="3" fill="#f59e0b" />
-          <circle cx="270" cy="130" r="3" fill="#f59e0b" />
-          <circle cx="310" cy="200" r="3" fill="#f59e0b" />
-          <circle cx="350" cy="150" r="3" fill="#f59e0b" />
-          <circle cx="370" cy="30" r="3" fill="#f59e0b" />
-          {/* Area Fill */}
-          <polygon
-            fill="#fefcbf"
-            points="30,180 70,100 110,120 150,150 190,50 230,70 270,130 310,200 350,150 370,30 390,180 30,180"
-          />
-          {/* Labels */}
-          <g className="text-xs text-gray-500">
-            <text x="10" y="190">
-              0
-            </text>
-            <text x="10" y="150">
-              50
-            </text>
-            <text x="10" y="110">
-              100
-            </text>
-            <text x="10" y="70">
-              200
-            </text>
-            <text x="10" y="30">
-              300
-            </text>
-            <text x="30" y="190">
-              Jan
-            </text>
-            <text x="70" y="190">
-              Feb
-            </text>
-            <text x="110" y="190">
-              Mar
-            </text>
-            <text x="150" y="190">
-              Apr
-            </text>
-            <text x="190" y="190">
-              Jun
-            </text>
-            <text x="230" y="190">
-              Aug
-            </text>
-            <text x="270" y="190">
-              Sep
-            </text>
-            <text x="310" y="190">
-              Oct
-            </text>
-            <text x="350" y="190">
-              Nov
-            </text>
-            <text x="370" y="190">
-              Dec
-            </text>
-          </g>
-        </svg>
+      <div className="w-full">
+        <Chart
+          options={options}
+          series={options.series}
+          type="area"
+          width="100%"
+          height={350}
+        />
       </div>
     </section>
   );

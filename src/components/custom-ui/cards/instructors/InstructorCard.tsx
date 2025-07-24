@@ -25,10 +25,10 @@ const InstructorCard = () => {
           <h3 className="text-lg font-semibold">Bio</h3>
           <p className="text-gray-700">
             Get to know our instructors better. This page provides detailed
-            information about each instructor's background, expertise, courses
+            information about each instructor&apos;s background, expertise, courses
             offered, and experience. Discover their qualifications, professional
             journey, certifications, and read feedback from students who have
-            learned under their guidance. Whether you're choosing a course or
+            learned under their guidance. Whether you&apos;re choosing a course or
             exploring learning paths, understanding your instructor helps build
             trust and ensures a better learning experience.
           </p>

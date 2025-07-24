@@ -126,7 +126,7 @@ export default function Shop() {
       const filteredReview = shops?.filter((sh) => sh.status === "Review");
       setReviewShops(filteredReview);
     }
-  }, [shops]);
+  }, []);
 
   const handleSearch = () => {
     console.log("Clicked Search");

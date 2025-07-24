@@ -3,7 +3,6 @@
 import EditQuizPopup from "@/components/custom-ui/popups/EditQuizPopup";
 import { InstructorQuizTypes } from "@/lib/types";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { TbEdit } from "react-icons/tb";
 
@@ -12,12 +11,12 @@ interface QuizCardsProps {
 }
 
 export default function QuizCard({ quiz }: QuizCardsProps) {
-  const router = useRouter();
+  // const router = useRouter();
 const [editQuizPopupOpen, setEditQuizPopupOpen] = React.useState(false);
 
-  const handleStartQuiz = (quiz: string) => {
+  // const handleStartQuiz = (quiz: string) => {
     
-  };
+  // };
 
   return (
     <section className="space-y-4">

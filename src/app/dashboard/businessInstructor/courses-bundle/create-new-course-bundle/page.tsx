@@ -9,9 +9,9 @@ import { Textarea } from "@/components/ui/textarea";
 import React from "react";
 
 export default function CreateNewCourseBundle() {
-  const [selectedDate, setSelectedDate] = React.useState<Date | null>(
-    new Date()
-  );
+  // const [selectedDate, setSelectedDate] = React.useState<Date | null>(
+  //   new Date()
+  // );
 
   return (
     <div className="p-6 space-y-6">

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FaCalendarAlt } from "react-icons/fa";
 
 const SubscriptionCard = ({ type }: { type: "active" | "previous" }) => {
   return (

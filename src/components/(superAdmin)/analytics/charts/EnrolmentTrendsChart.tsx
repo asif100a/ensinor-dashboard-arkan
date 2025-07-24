@@ -3,10 +3,10 @@ import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 import { shortMonths } from "@/lib/utils";
 
-interface EnrolmentTrendsChartProps {
-}
+// interface EnrolmentTrendsChartProps {
+// }
 
-export default function EnrolmentTrendsChart({}: EnrolmentTrendsChartProps) {
+export default function EnrolmentTrendsChart() {
   const options: ApexCharts.ApexOptions = {
     chart: {
       type: "bar",

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import StarRating from "../inputs/StarRating";
 import DatePicker from "react-datepicker";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -17,7 +16,7 @@ export default function CreateEventPopup({
   setIsOpenPopup,
 }: AddCoursePopupProps) {
   const [loading, setLoading] = useState(false);
-  const [rating, setRating] = useState<number>(0);
+  // const [rating, setRating] = useState<number>(0);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   const {

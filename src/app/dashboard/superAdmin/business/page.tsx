@@ -6,7 +6,7 @@ import SectionHeader from "@/components/SectionHeader";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FiPlus } from "react-icons/fi";
-import { BusinessTypes, StudentTypes } from "@/lib/types";
+import { BusinessTypes } from "@/lib/types";
 import BusinessTable from "@/components/(superAdmin)/business/BusinessTable";
 import PrintAndExportButtons from "@/components/PrintAndExportButtons";
 import CreateBusinessPopup from "@/components/custom-ui/popups/CreateBusinessPopup";
@@ -138,7 +138,7 @@ export default function Business() {
       const filteredReview = businesses?.filter((st) => st.status === "review");
       setReviewBusiness(filteredReview);
     }
-  }, [businesses]);
+  }, []);
 
   const handleSearch = () => {
     console.log("Clicked Search");

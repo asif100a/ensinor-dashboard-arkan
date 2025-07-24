@@ -1,6 +1,5 @@
 "use client";
 
-import CoursesTable from "@/components/(superAdmin)/courses/CoursesTable";
 import { SimpleSearchForm } from "@/components/custom-ui/buttons/buttons";
 import SectionHeader from "@/components/SectionHeader";
 import Image from "next/image";
@@ -133,7 +132,7 @@ export default function Events() {
       const filteredCompleted = events?.filter((ev) => ev.status === "Completed");
       setCompletedEvents(filteredCompleted);
     }
-  }, [events]);
+  }, []);
 
   const handleSearch = () => {
     console.log("Clicked Search");

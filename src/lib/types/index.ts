@@ -116,6 +116,7 @@ export interface StudentTypes {
   active?: string;
   enrolledDate?: string;
   status?: string;
+  courses?: number;
 }
 
 export interface WithdrawTypes {
@@ -225,4 +226,19 @@ export interface ConferenceTypes {
   conferenceTool: string;
   description: string;
   status: "completed" | "incomplete";
+}
+
+export interface BadgeTypes {
+  title: string;
+  description: string;
+  icon: string;
+  earnedDate: string;
+  type: string;
+  status: string;
+  progress?: number;
+}
+
+export interface PointsBreakdownTypes {
+  category: string;
+  points: number;
 }

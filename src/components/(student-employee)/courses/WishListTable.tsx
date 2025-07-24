@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { FiEdit } from "react-icons/fi";
 import { MdOutlineDeleteForever } from "react-icons/md";
-import { RxCross2 } from "react-icons/rx";
 
 const tHeads = [
   "Course Title",

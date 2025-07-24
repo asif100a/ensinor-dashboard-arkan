@@ -9,18 +9,7 @@ import RevenueDistributionChart from "@/components/(superAdmin)/analytics/charts
 import UsersOverviewChart from "@/components/(superAdmin)/analytics/charts/UsersOverviewChart";
 import SelectMonthDropdown from "@/components/(superAdmin)/analytics/SelectMonthDropdown";
 import Tabs from "@/components/Tabs";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import React, { useState } from "react";
-import { FaAngleDown } from "react-icons/fa6";
 
 const tabs: string[] = ["Revenue", "Enrollments", "Content", "Users"];
 

@@ -24,13 +24,13 @@ interface AddDegreePopupProps {
 
 // interface FormData {}
 
-interface SpeakerTypes {
-  id: number;
-  speakerName: string;
-  profession: string;
-  photo: null | object;
-  speakTime: string;
-}
+// interface SpeakerTypes {
+//   id: number;
+//   speakerName: string;
+//   profession: string;
+//   photo: null | object;
+//   speakTime: string;
+// }
 
 export default function AddInstructorPopup({
   setIsOpenPopup,
@@ -39,14 +39,14 @@ export default function AddInstructorPopup({
   const [rating, setRating] = useState(0);
 
   // Catch Rating value
-  const handleRating = (rate: number) => {
-    setRating(rate);
-  };
+  // const handleRating = (rate: number) => {
+  //   setRating(rate);
+  // };
 
-  const handleReset = () => {
-    // Set the initial value
-    setRating(0);
-  };
+  // const handleReset = () => {
+  //   // Set the initial value
+  //   setRating(0);
+  // };
 
   const {
     // register,

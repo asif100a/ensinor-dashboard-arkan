@@ -1,5 +1,4 @@
 import React from "react";
-import { CourseTypes } from "@/lib/types";
 import SectionHeader from "@/components/SectionHeader";
 import getFormatPrice from "../../../../utils/getFormatPrice";
 

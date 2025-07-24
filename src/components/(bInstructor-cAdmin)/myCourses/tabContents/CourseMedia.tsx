@@ -2,11 +2,12 @@
 
 import { CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef } from "react";
 
 export default function CourseMedia() {
   const editor = useRef(null);
-  const [content, setContent] = useState("");
+  // const [content, setContent] = useState("");
+  console.log("editor :", editor);
 
   const config = useMemo(
     () => ({
@@ -15,6 +16,7 @@ export default function CourseMedia() {
     }),
     []
   );
+  console.log("config :", config);
 
   return (
     <div>

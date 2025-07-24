@@ -130,7 +130,7 @@ export default function Courses() {
       const filteredReview = courses?.filter(crs => crs.status === 'Review');
       setReviewCourses(filteredReview);
     }
-  }, [courses]);
+  }, []);
 
   const handleSearch = () => {
     console.log("Clicked Search");

@@ -2,15 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
-import { Label } from "@/components/ui/label";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 

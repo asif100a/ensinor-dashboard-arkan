@@ -14,17 +14,29 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
-   const router = useRouter();
-   const [user, setUser] = useState<User | null>(null);
-  
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+
   useEffect(() => {
-    const currentUser = getCurrentUser();
-    if (!currentUser) {
-      router.push("/sign-in");
+    if (typeof window !== "undefined") {
+      const currentUser = getCurrentUser();
+      if (!currentUser) {
+        router.push("/sign-in");
+      } else {
+        setUser(currentUser);
+      }
     }
-    setUser(currentUser);
   }, []);
+
   console.log("user: ", user);
+
+  if (!user) {
+    return (
+      <div className="w-screen h-screen flex justify-center items-center">
+        <h1 className="text-3xl font-bold">Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -35,7 +47,9 @@ export default function Dashboard() {
       {user?.userRole === ("businessInstructor" as UserRole) && (
         <BusinessInstructorDashboard />
       )}
-      {user?.userRole === ("companysAdmin" as UserRole) && <CompanysAdminDashboard />}
+      {user?.userRole === ("companysAdmin" as UserRole) && (
+        <CompanysAdminDashboard />
+      )}
       {user?.userRole === ("superAdmin" as UserRole) && <SuperAdminDashboard />}
     </div>
   );

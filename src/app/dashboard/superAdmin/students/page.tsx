@@ -133,7 +133,7 @@ export default function Students() {
       const filteredReview = students?.filter(st => st.status === 'review');
       setReviewStudents(filteredReview);
     }
-  }, [students]);
+  }, []);
 
   const handleSearch = () => {
     console.log("Clicked Search");

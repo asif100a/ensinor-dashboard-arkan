@@ -1,4 +1,4 @@
-import { EventWebinarTypes, ShopTypes } from "@/lib/types";
+import { EventWebinarTypes } from "@/lib/types";
 import Image from "next/image";
 import React from "react";
 

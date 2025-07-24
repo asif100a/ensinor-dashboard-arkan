@@ -1,7 +1,4 @@
 import React from "react";
-import { RiInformationLine } from "react-icons/ri";
-import Image from "next/image";
-import getCapitalizedWord from "../../../../utils/getCapitalizedWord";
 import { StudentTypes } from "@/lib/types";
 import SectionHeader from "@/components/SectionHeader";
 

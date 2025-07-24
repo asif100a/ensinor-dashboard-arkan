@@ -4,12 +4,14 @@ interface TabsProps {
   tabs: string[];
   activeTab: string;
   setActiveTab: React.Dispatch<React.SetStateAction<string>>;
+  count?: number[];
+  className?: string;
 }
 
-export default function Tabs({tabs, activeTab, setActiveTab}: TabsProps) {
+export default function Tabs({tabs, activeTab, setActiveTab, count, className}: TabsProps) {
   return (
-    <div className="w-fit overflow-hidden p-1.5 bg-white rounded-lg flex items-center gap-6">
-      {tabs.map((tab: string) => (
+    <div className={`w-fit overflow-hidden p-1.5 bg-white rounded-lg flex items-center gap-6 ${className}`}>
+      {tabs.map((tab: string, idx: number) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
@@ -19,7 +21,7 @@ export default function Tabs({tabs, activeTab, setActiveTab}: TabsProps) {
               : "bg-transparent hover:bg-[#e1e3e4]"
           } rounded-md`}
         >
-          {tab}
+          {tab} {count !== undefined && count.length >= 0 && count.map((c: number, i: number) => i === idx && <span key={i}>{c}</span>)}
         </button>
       ))}
     </div>

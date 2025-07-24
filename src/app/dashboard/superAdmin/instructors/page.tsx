@@ -6,9 +6,8 @@ import SectionHeader from "@/components/SectionHeader";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FiPlus } from "react-icons/fi";
-import { InstructorTypes, ShopTypes } from "@/lib/types";
+import { InstructorTypes } from "@/lib/types";
 import InstructorsTable from "@/components/(superAdmin)/Instructors/InstructorsTable";
-import InstructorCard from "@/components/custom-ui/cards/instructors/InstructorCard";
 import ReviewInstructorList from "@/components/(superAdmin)/Instructors/ReviewInstructorList";
 import AddInstructorPopup from "@/components/custom-ui/popups/AddInstructorPopup";
 
@@ -141,7 +140,7 @@ export default function Instructors() {
       const filteredInactive = instructors?.filter(sh => sh.status === 'inactive');
       setInactiveInstructors(filteredInactive);
     }
-  }, [instructors]);
+  }, []);
 
   const handleSearch = () => {
     console.log("Clicked Search");

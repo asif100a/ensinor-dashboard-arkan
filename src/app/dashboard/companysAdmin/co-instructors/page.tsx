@@ -2,7 +2,6 @@
 
 import CoInstructorsForm from "@/components/(bInstructor-cAdmin)/coInstructors/CoInstructorsForm";
 import CurrentColnstructorsTable from "@/components/(bInstructor-cAdmin)/coInstructors/CurrentColnstructorsTable";
-import SectionHeader from "@/components/SectionHeader";
 import React from "react";
 
 export default function CoInstructors() {

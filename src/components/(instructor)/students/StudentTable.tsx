@@ -46,8 +46,8 @@ export default function StudentTable({
                     <td className="px-6 py-4">
                       <div className="w-full flex items-center gap-2">
                         <Image
-                          src={studentsData.image}
-                          alt={studentsData.studentName}
+                          src={studentsData?.image || '/images/dashboard/student.png'}
+                          alt={studentsData?.studentName || 'Student image'}
                           width={48}
                           height={40}
                           className="w-12 h-12 rounded"

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import StarRating from "../inputs/StarRating";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -24,7 +23,7 @@ export default function CreateBusinessPopup({
   setIsOpenPopup,
 }: AddShopPopupProps) {
   const [loading, setLoading] = useState(false);
-  const [rating, setRating] = useState<number>(0);
+  // const [rating, setRating] = useState<number>(0);
   const {
     // register,
     handleSubmit,

@@ -24,8 +24,7 @@ export default function SignIn() {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<InputUserTypes>();
 
   const handleSignIn: SubmitHandler<InputUserTypes> = async (data) => {

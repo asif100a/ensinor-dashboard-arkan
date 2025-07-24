@@ -2,19 +2,19 @@
 
 import { CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import React, { useMemo, useRef, useState } from "react";
+import React from "react";
 
 export default function CourseMedia() {
-  const editor = useRef(null);
-  const [content, setContent] = useState("");
+  // const editor = useRef(null);
+  // const [content, setContent] = useState("");
 
-  const config = useMemo(
-    () => ({
-      readonly: false, // all options from https://xdsoft.net/jodit/docs/,
-      placeholder: "Type course description...",
-    }),
-    []
-  );
+  // const config = useMemo(
+  //   () => ({
+  //     readonly: false, // all options from https://xdsoft.net/jodit/docs/,
+  //     placeholder: "Type course description...",
+  //   }),
+  //   []
+  // );
 
   return (
     <div>
@@ -125,7 +125,10 @@ export default function CourseMedia() {
             </video>
           </div>
 
-          <button type="button" className="col-span-2 w-full bg-yellow-primary text-black-primary text-lg font-medium py-3 rounded-md hover:bg-yellow-500 cursor-pointer">
+          <button
+            type="button"
+            className="col-span-2 w-full bg-yellow-primary text-black-primary text-lg font-medium py-3 rounded-md hover:bg-yellow-500 cursor-pointer"
+          >
             Save
           </button>
         </form>

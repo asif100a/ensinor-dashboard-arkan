@@ -136,7 +136,7 @@ export default function Instructors() {
 
       const filteredReview = allInstructor.filter((instructor: InstructorTypes) => instructor.status === 'review');
       setReviewInstructors(filteredReview);
-    }, [allInstructor]);
+    }, []);
 
   const handleSearch = () => {
     console.log("Form searched");

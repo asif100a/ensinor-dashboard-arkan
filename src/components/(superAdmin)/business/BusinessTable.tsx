@@ -4,7 +4,6 @@ import { RiInformationLine } from "react-icons/ri";
 import Image from "next/image";
 import { BusinessTypes } from "@/lib/types";
 import getCapitalizedWord from "../../../../utils/getCapitalizedWord";
-import { TfiLocationPin } from "react-icons/tfi";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import getFormatPrice from "../../../../utils/getFormatPrice";

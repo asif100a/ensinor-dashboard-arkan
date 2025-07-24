@@ -34,6 +34,11 @@ export const studentLinks: SidebarLink[] = [
     icon: "/icons/certificate.svg",
   },
   {
+    name: "Badges & Points",
+    url: "/dashboard/students/badges-points",
+    icon: "/icons/certificate-2.svg",
+  },
+  {
     name: "Settings",
     url: "/dashboard/students/settings",
     icon: "/icons/settings.svg",

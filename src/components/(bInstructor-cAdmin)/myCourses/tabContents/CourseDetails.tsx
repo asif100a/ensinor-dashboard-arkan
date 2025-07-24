@@ -13,12 +13,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import JoditEditor from "jodit-react";
+import dynamic from "next/dynamic";
 import React, { useMemo, useRef, useState } from "react";
 
 interface CourseDetailsProps {
   setActiveTab: React.Dispatch<React.SetStateAction<string>>;
 }
+
+// Dynamically import JoditEditor with SSR disabled
+const JoditEditor = dynamic(() => import("jodit-react"), {
+  ssr: false,
+  loading: () => <div>Loading editor...</div>, // Optional placeholder
+});
 
 export default function CourseDetails({setActiveTab}: CourseDetailsProps) {
   const editor = useRef(null);
@@ -31,8 +37,8 @@ export default function CourseDetails({setActiveTab}: CourseDetailsProps) {
     }),
     []
   );
-
-  const handleSubmit = (data: any) => {
+  
+  const handleSubmit = (data: React.FormEvent<HTMLFormElement>) => {
     console.log("Create course form data: ", data);
 
     setActiveTab("Course media");
@@ -174,7 +180,7 @@ export default function CourseDetails({setActiveTab}: CourseDetailsProps) {
               config={config}
               tabIndex={1} // tabIndex of textarea
               onBlur={(newContent) => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-              onChange={(newContent) => {}}
+              // onChange={(newContent) => {}}
             />
           </div>
 

@@ -112,9 +112,9 @@ export default function InstructorsTable({
                   <div>
                     <span
                       className={`px-2 py-1 ${
-                        instructor.status === "Active"
+                        instructor.status === "active"
                           ? "text-[#4BB54B] bg-[#4BB54B1A]"
-                          : instructor.status === "Pending"
+                          : instructor?.status === "review"
                           ? "text-[#FD7E14] bg-[#FFF2E6]"
                           : "text-[#D70000] bg-[#FF53536B]"
                       } text-sm rounded-sm`}

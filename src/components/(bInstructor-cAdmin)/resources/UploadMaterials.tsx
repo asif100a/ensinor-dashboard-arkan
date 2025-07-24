@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useRef, useState } from "react";
 
 export default function UploadMaterials() {
@@ -18,7 +19,7 @@ export default function UploadMaterials() {
         return;
       }
       // Validate dimensions
-      const img = new Image();
+      const img = new window.Image() as HTMLImageElement;
       img.src = URL.createObjectURL(file);
       img.onload = () => {
         if (img.width < 600 || img.height < 450) {
@@ -129,9 +130,11 @@ export default function UploadMaterials() {
         {/* Image Preview */}
         {previewUrl && (
           <div className="mt-4 relative">
-            <img
+            <Image
               src={previewUrl}
               alt="Preview"
+              width={300}
+              height={250}
               className="max-w-[300px] max-h-[225px] object-contain rounded-md"
             />
             <button

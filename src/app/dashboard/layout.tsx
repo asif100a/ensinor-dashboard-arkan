@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       router.push("/sign-in");
     }
     setUser(currentUser);
-  }, []);
+  }, [router]);
   console.log("user: ", user);
 
   return (

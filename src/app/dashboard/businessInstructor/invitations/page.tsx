@@ -5,22 +5,22 @@ import IndividualInvitationForm from "@/components/(bInstructor-cAdmin)/invitati
 import InvitationTabs from "@/components/(bInstructor-cAdmin)/invitations/InvitationTabs";
 import SectionHeader from "@/components/SectionHeader";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 
 const tabs: string[] = ["Individual Invite", "Group invite"];
 
-export default function Invitations() {
-  const searchPrams = useSearchParams();
+function InvitationsInner() {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<string>(tabs[0]);
 
   useEffect(() => {
-    const invite = searchPrams.get("invite");
+    const invite = searchParams.get("invite");
     if (invite === "group") {
       setActiveTab(tabs[1]);
     } else {
       setActiveTab(tabs[0]);
     }
-  }, [searchPrams]);
+  }, [searchParams]);
 
   return (
     <div className="p-6 space-y-6">
@@ -38,9 +38,17 @@ export default function Invitations() {
         setActiveTab={setActiveTab}
       />
 
-      {/* Invitation::Form */}
+      {/* Invitation Form */}
       {activeTab === tabs[0] && <IndividualInvitationForm />}
       {activeTab === tabs[1] && <GroupInvitationForm />}
     </div>
+  );
+}
+
+export default function Invitations() {
+  return (
+    <Suspense fallback={<div className="p-6">Loading...</div>}>
+      <InvitationsInner />
+    </Suspense>
   );
 }

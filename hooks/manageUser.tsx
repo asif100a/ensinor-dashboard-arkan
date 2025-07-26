@@ -8,12 +8,7 @@ export function setCurrentUser(userRole: string) {
 }
 
 export function getCurrentUser() {
-  if (typeof window === "undefined") {
-    return null; // Return null during SSR
-  }
   const user = localStorage.getItem('userRole');
-  if (!user) {
-    return null;
-  }
+  if (!user) return null;
   return { userRole: user };
 }

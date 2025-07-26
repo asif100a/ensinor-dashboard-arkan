@@ -26,7 +26,7 @@ export default function Dashboard() {
         setUser(currentUser);
       }
     }
-  }, []);
+  }, [router]);
 
   console.log("user: ", user);
 

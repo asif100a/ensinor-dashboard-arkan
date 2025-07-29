@@ -12,8 +12,8 @@ export default function Branding() {
   const [displayImageUrl, setDisplayImageUrl] = useState<
     string | ArrayBuffer | null
   >("");
-  console.log("Uploaded Logo: ", uploadedLogo);
-  console.log("displayImageUrl: ", displayImageUrl);
+  // console.log("Uploaded Logo: ", uploadedLogo);
+  // console.log("displayImageUrl: ", displayImageUrl);
 
   useEffect(() => {
     if (uploadedLogo) {

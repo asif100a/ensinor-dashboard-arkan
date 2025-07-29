@@ -7,7 +7,7 @@ import React, { useMemo, useRef } from "react";
 export default function CourseMedia() {
   const editor = useRef(null);
   // const [content, setContent] = useState("");
-  console.log("editor :", editor);
+  // console.log("editor :", editor);
 
   const config = useMemo(
     () => ({
@@ -16,7 +16,7 @@ export default function CourseMedia() {
     }),
     []
   );
-  console.log("config :", config);
+  // console.log("config :", config);
 
   return (
     <div>

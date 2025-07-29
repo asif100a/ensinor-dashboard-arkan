@@ -17,7 +17,7 @@ export default function VerifyEmail() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // Handle form submission logic here
-    console.log("Form submitted");
+    // console.log("Form submitted");
     // Redirect to the next page or perform any other action
     router.push("/set-new-password");
   };

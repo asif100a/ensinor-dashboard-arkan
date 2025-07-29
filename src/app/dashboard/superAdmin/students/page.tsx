@@ -136,7 +136,7 @@ export default function Students() {
   }, []);
 
   const handleSearch = () => {
-    console.log("Clicked Search");
+    // console.log("Clicked Search");
   };
 
   return (

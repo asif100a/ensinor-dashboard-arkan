@@ -35,7 +35,7 @@ export default function SectionHeader({
   const handleSearch = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    console.log("Search text: ", event);
+    // console.log("Search text: ", event);
   };
 
   return (

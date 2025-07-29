@@ -27,7 +27,7 @@ export default function UploadMaterials() {
           URL.revokeObjectURL(img.src);
         } else {
           setPreviewUrl(img.src); // Set preview URL
-          console.log("File selected:", file.name);
+          // console.log("File selected:", file.name);
           // Optionally handle file (e.g., upload to server)
         }
       };

@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
     setUser(currentUser);
   }, [router]);
-  console.log("user: ", user);
+  // console.log("user: ", user);
 
   return (
     <div className="flex gap-0 h-screen overflow-hidden bg-gray-100">

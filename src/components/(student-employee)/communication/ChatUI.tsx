@@ -7,13 +7,13 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
 const ChatUI = () => {
   const handleSearch = () => {
-    console.log("Text searched");
+    // console.log("Text searched");
   };
 
   // Handle Send Message
   const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Message sent!");
+    // console.log("Message sent!");
   };
 
   return (

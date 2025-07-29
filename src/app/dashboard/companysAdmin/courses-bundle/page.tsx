@@ -36,7 +36,7 @@ export default function CoursesBundle() {
 
 //   const handleCreateNewBundle = () => {
 //     // Logic to handle creating a new bundle
-//     console.log("Create a new bundle course");
+//     // console.log("Create a new bundle course");
 //     router.push("/dashboard/businessInstructor/courses-bundle/create-new-course-bundle");
 //   };
 

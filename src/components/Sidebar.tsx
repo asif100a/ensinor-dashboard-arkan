@@ -23,7 +23,7 @@ interface SidebarProps {
 }
 
 export default function Sidebar({userRole}: SidebarProps) {
-  console.log("User role from sidebar: ", userRole);
+  // console.log("User role from sidebar: ", userRole);
   const router = useRouter();
 
   const handleLogout = () => {

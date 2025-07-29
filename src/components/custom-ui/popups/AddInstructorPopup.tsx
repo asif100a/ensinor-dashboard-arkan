@@ -56,20 +56,20 @@ export default function AddInstructorPopup({
   } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
-    console.log("Form data: ", data);
+    // console.log("Form data: ", data);
     setLoading(true);
     // try {
     //   const { data: response } = await serverURL.post("/api/flats/createFlat", {
     //     ...data,
     //     lastDayOfPayBill: selectedDate,
     //   });
-    //   console.log("Add Flat Response: ", response);
+    //   // console.log("Add Flat Response: ", response);
     //   toast.success(response.message);
     //   reset();
     //   setIsDisplayAddFlat(false);
     //   fetchFlatData();
     // } catch (error: unknown) {
-    //   console.log("Error while posting flat data: ", error);
+    //   // console.log("Error while posting flat data: ", error);
     //   if (error instanceof Error) {
     //     let errorMessage;
     //     if (axios.isAxiosError(error)) {

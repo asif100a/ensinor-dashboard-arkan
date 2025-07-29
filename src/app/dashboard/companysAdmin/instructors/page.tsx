@@ -139,7 +139,7 @@ export default function Instructors() {
     }, []);
 
   const handleSearch = () => {
-    console.log("Form searched");
+    // console.log("Form searched");
   };
 
   return (

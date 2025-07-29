@@ -4,13 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { UserRole } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import {setCurrentUser} from "../../../../hooks/manageUser";
-import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 type InputUserTypes = {
@@ -28,47 +25,7 @@ export default function SignIn() {
   } = useForm<InputUserTypes>();
 
   const handleSignIn: SubmitHandler<InputUserTypes> = async (data) => {
-    const toastId = toast.loading("Signing the user");
-    console.log("toastId: ", toastId);
-    console.log("Sign in data: ", data);
-    let userRole: UserRole = "";
-
-    switch (data?.email) {
-      case "student@gmail.com":
-        userRole = "student";
-        break;
-      case "instructor@gmail.com":
-        userRole = "instructor";
-        break;
-      case "employee@gmail.com":
-        userRole = "employee";
-        break;
-      case "businessInstructor@gmail.com":
-        userRole = "businessInstructor";
-        break;
-      case "companysAdmin@gmail.com":
-        userRole = "companysAdmin";
-        break;
-      case "superAdmin@gmail.com":
-        userRole = "superAdmin";
-        break;
-      default:
-        userRole = "";
-        toast.dismiss(toastId);
-        toast.error("This email not found!");
-    }
-
-    if (!userRole) return;
-    if (!(data.password === "112233")) {
-      toast.dismiss(toastId);
-      return toast.error("Password does no match");
-    }
-
-    const res = await setCurrentUser(userRole);
-    console.log("Login Response: ", res);
-    toast.dismiss(toastId);
-    toast.success(res.message);
-    router.push('/dashboard');
+  //  // console.log("Sign in data");
   };
 
   return (

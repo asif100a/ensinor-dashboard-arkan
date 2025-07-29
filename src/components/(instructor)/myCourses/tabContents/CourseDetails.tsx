@@ -36,7 +36,7 @@ export default function CourseDetails({setActiveTab}: CourseDetailsProps) {
   );
 
   const handleSubmit = (data: React.FormEvent<HTMLFormElement>) => {
-    console.log("Create course form data: ", data);
+    // console.log("Create course form data: ", data);
 
     setActiveTab("Course media");
   };

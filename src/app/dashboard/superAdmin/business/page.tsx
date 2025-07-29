@@ -141,7 +141,7 @@ export default function Business() {
   }, []);
 
   const handleSearch = () => {
-    console.log("Clicked Search");
+    // console.log("Clicked Search");
   };
 
   return (
